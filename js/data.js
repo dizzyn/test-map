@@ -21,7 +21,7 @@ var data = {
             "sign": "patentů "
         },
         "Graduates": {
-            "name": "Počet technickych absolventu",
+            "name": "Počet absolventu",
             "info": "Počet absolventů technických oborů na 1 000 obyvatel",
             "desc_suffix": "absolventů na 1 000 obyvatel",
             "sign": "absolventů "
