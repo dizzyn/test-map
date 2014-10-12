@@ -2,6 +2,12 @@ var data = {
     "years": ["2014", "2013", "2012", "2011", "2010"],
     "mainState": "czech",
     "metrics": {
+        "0": {
+            "name": "Erste Inovační Barometr.",
+            "info": "Erste Inovační Barometr",
+            "desc_suffix": "v EIB",
+            "sign": "bodů "
+        },
         "1": {
             "name": "Výdaje na R&D.",
             "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
@@ -12,13 +18,13 @@ var data = {
             "name": "Počet patentů",
             "info": "Počet přihlášených patentů na 1 000 obyvatel",
             "desc_suffix": "patentů na 1 000 obyvatel",
-            "sign": "patentů"
+            "sign": "patentů "
         },
         "4": {
             "name": "Počet publikací",
             "info": "Počet citovatelných publikací na 1 000 obyvatel",
             "desc_suffix": "publikací na 1 000 obyvatel",
-            "sign": "publikací"
+            "sign": "publikací "
         }
         "5": {
             "name": "Venture kapitál",
@@ -30,25 +36,25 @@ var data = {
             "name": "Připojení k internetu",
             "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
             "desc_suffix": "domácností připojených k vysokorychlostnímu internetu",
-            "sign": "%"
+            "sign": "% "
         }
         "7": {
             "name": "Výdaje na vzdělávání",
             "info": "Veřejné výdaje na vzdělávání vůči HDP",
             "desc_suffix": "z HDP tvoří veřejné výdaje na vzdělání",
-            "sign": "%"
+            "sign": "% "
         }
         "8": {
             "name": "High-tech export",
             "info": "Podíl high-tech exportů na celkovém exportu",
             "desc_suffix": "z celkového exportu tvoří high-tech produkty",
-            "sign": "%"
+            "sign": "% "
         }
         "9": {
             "name": "eGovernment",
             "info": "Podíl domácností komunikujících se státní správou elektronicky",
             "desc_suffix": "domácností komunikuje se státní správou elektronicky",
-            "sign": "%"
+            "sign": "% "
         }
 
     },
@@ -63,9 +69,17 @@ var data = {
             },
             "metrics": {
                 "2010": {
+                    "0": [30, 0.05],
                     "1": [30, 0.05],
                     "2": [60, 30],
                     "3": [100, 2.4]
+                    "4": [100, 2.4]
+                    "5": [100, 2.4]
+                    "6": [100, 2.4]
+                    "7": [100, 2.4]
+                    "8": [100, 2.4]
+                    "9": [100, 2.4]
+
                 },
                 "2011": {
                     "1": [0, 0],
