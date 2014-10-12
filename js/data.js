@@ -3,13 +3,13 @@ var data = {
     "mainState": "czech",
     "metrics": {
         "0": {
-            "name": "EIB.",
+            "name": "EIB",
             "info": "Erste Inovační Barometr",
             "desc_suffix": "v EIB",
             "sign": "bodů "
         },
         "1": {
-            "name": "Výdaje na R&D.",
+            "name": "Výdaje na R&D",
             "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
             "desc_suffix": "z HDP tvoří výdaje na R&D",
             "sign": "% "
