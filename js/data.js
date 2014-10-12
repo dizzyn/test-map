@@ -25,31 +25,31 @@ var data = {
             "info": "Počet citovatelných publikací na 1 000 obyvatel",
             "desc_suffix": "publikací na 1 000 obyvatel",
             "sign": "publikací "
-        }
+        },
         "5": {
             "name": "Venture kapitál",
             "info": "Investice do start-up a seed venture kapitálu",
             "desc_suffix": "z HDP tvoří investice do venture kapitálu",
             "sign": "% "
-        }
+        },
         "6": {
             "name": "Připojení k internetu",
             "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
             "desc_suffix": "domácností připojených k vysokorychlostnímu internetu",
             "sign": "% "
-        }
+        },
         "7": {
             "name": "Výdaje na vzdělávání",
             "info": "Veřejné výdaje na vzdělávání vůči HDP",
             "desc_suffix": "z HDP tvoří veřejné výdaje na vzdělání",
             "sign": "% "
-        }
+        },
         "8": {
             "name": "High-tech export",
             "info": "Podíl high-tech exportů na celkovém exportu",
             "desc_suffix": "z celkového exportu tvoří high-tech produkty",
             "sign": "% "
-        }
+        },
         "9": {
             "name": "eGovernment",
             "info": "Podíl domácností komunikujících se státní správou elektronicky",
