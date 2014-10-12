@@ -4,22 +4,53 @@ var data = {
     "metrics": {
         "1": {
             "name": "Výdaje na R&D.",
-            "info": "Povídání o výdajích",
-            "desc_suffix": "Povídání o výdajích",
-            "sign": "HDP"
+            "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
+            "desc_suffix": "z HDP tvoří výdaje na R&D",
+            "sign": "% "
         },
         "2": {
             "name": "Počet patentů",
-            "info": "Povídání o patentech",
-            "desc_suffix": "Povídání o patentech",
+            "info": "Počet přihlášených patentů na 1 000 obyvatel",
+            "desc_suffix": "patentů na 1 000 obyvatel",
             "sign": "patentů"
         },
-        "3": {
-            "name": "eGoverment",
+        "4": {
+            "name": "Počet publikací",
+            "info": "Počet citovatelných publikací na 1 000 obyvatel",
+            "desc_suffix": "publikací na 1 000 obyvatel",
+            "sign": "publikací"
+        }
+        "5": {
+            "name": "Venture kapitál",
+            "info": "Investice do start-up a seed venture kapitálu",
+            "desc_suffix": "z HDP tvoří investice do venture kapitálu",
+            "sign": "% "
+        }
+        "6": {
+            "name": "Připojení k internetu",
+            "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
+            "desc_suffix": "domácností připojených k vysokorychlostnímu internetu",
+            "sign": "%"
+        }
+        "7": {
+            "name": "Výdaje na vzdělávání",
+            "info": "Veřejné výdaje na vzdělávání vůči HDP",
+            "desc_suffix": "z HDP tvoří veřejné výdaje na vzdělání",
+            "sign": "%"
+        }
+        "8": {
+            "name": "High-tech export",
+            "info": "Podíl high-tech exportů na celkovém exportu",
+            "desc_suffix": "z celkového exportu tvoří high-tech produkty",
+            "sign": "%"
+        }
+        "9": {
+            "name": "eGovernment",
             "info": "Podíl domácností komunikujících se státní správou elektronicky",
             "desc_suffix": "domácností komunikuje se státní správou elektronicky",
             "sign": "%"
         }
+
     },
     "states": {
         "germany": {
