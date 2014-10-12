@@ -21,7 +21,7 @@ var data = {
             "sign": "patentů "
         },
         "Graduates": {
-            "name": "Počet absolventu",
+            "name": "Počet absolventů",
             "info": "Počet absolventů technických oborů na 1 000 obyvatel",
             "desc_suffix": "absolventů na 1 000 obyvatel",
             "sign": "absolventů "
@@ -78,16 +78,14 @@ var data = {
                 "2010": {
                     "EIB": [61.3, 2.4],
                     "RnD": [82.6, 2.69],
-                    "Patents": [86.8, 0.05],
-                    "Graduates": [49.5, 30],
-                    "Documents": [51.4, 2.4],
-                    "Venture_cap": [58.5, 2.4],
-                    "Broadband": [68.0, 2.4],
-                    "Educ_exp": [36.6, 2.4],
-                    "Exports": [52.6, 2.4],
-                    "E_Government": [65.7, 2.4]
-
-
+                    "Patents": [86.8, 2.09],
+                    "Graduates": [49.5, 12.5],
+                    "Documents": [51.4, 1.55],
+                    "Venture_cap": [58.5, 0.017],
+                    "Broadband": [68.0, 65],
+                    "Educ_exp": [36.6, 4.49],
+                    "Exports": [52.6, 14],
+                    "E_Government": [65.7, 48]
                 },
                 "2011": {
                     "EIB": [30, 0.05],
