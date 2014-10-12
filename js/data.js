@@ -3,7 +3,7 @@ var data = {
     "mainState": "czech",
     "metrics": {
         "0": {
-            "name": "Erste Inovační Barometr.",
+            "name": "EIB.",
             "info": "Erste Inovační Barometr",
             "desc_suffix": "v EIB",
             "sign": "bodů "
