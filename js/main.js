@@ -43,18 +43,17 @@ $(function() {
             $(".bottom-table .row").each(function() {
                 var $row = $(this);
                 var metricKey = $row.attr("data-metric");
-
-                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[year][metricKey][1] + " " + data.metrics[metricKey]["sign"]);
-                $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[year][metricKey][0] + "%");        
+                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + " " + data.metrics[metricKey]["sign"]);
+                $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
             });
 
-            $state.find(".flag img").attr("src", "img/flags/flag-" + state + ".png");
+            $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
 
             $state.find(".score .value").html("0 / " + states.length);
 
-            $state.find(".points .value").html(data.states[state].metrics[year][metricKey][0]);
+            $state.find(".points .value").html(data.states[state].metrics[metricKey][year][0]);
 
-            $state.find(".detail .number").html(data.states[state].metrics[year][metricKey][1] + " " + metric.sign);
+            $state.find(".detail .number").html(data.states[state].metrics[metricKey][year][1] + " " + metric.sign);
             $state.find(".detail .desc").html(metric.desc_suffix);
         }
     };
@@ -78,7 +77,7 @@ $(function() {
     $popupHolder.find(".btn-close").click(function() {
         closePopup()
     });
-    
+
     $popupHolder.click(function(e) {
         var $target = $(e.target);
 
@@ -103,7 +102,7 @@ $(function() {
             var $state = $(".state-" + state);
             var $statePin = $(".pin-" + state);
 
-            var value = data.states[state]["metrics"][year][metricKey][0];
+            var value = data.states[state]["metrics"][metricKey][year][0];
             $statePin.find(".number").html(value);
 
             $state.css("fill", "rgba(255, 0, 0, ." + value + ")");
@@ -144,8 +143,8 @@ $(function() {
     for (i in states) {
         var state = states[i];
 
-        $popupStateSelector1.append($("<option>").html(state));
-        $popupStateSelector2.append($("<option>").html(state));
+        $popupStateSelector1.append($("<option value='" + state + "'>").html(data.states[state]["names"]["cs"]));
+        $popupStateSelector2.append($("<option value='" + state + "'>").html(data.states[state]["names"]["cs"]));
     }
 
     $years.addClass("count" + data.years.length);
@@ -171,7 +170,7 @@ $(function() {
     for (i in metricsKeys) {
         var key = metricsKeys[i];
         $popupMetricSelector.append($("<option>").html(data.metrics[key]["name"]).attr("value", key));
-        
+
         var $newRow = $rowTemplate.clone().appendTo($table).removeClass("row-template").addClass("row").addClass("row-metric-" + key).attr("data-metric", key);
         $newRow.find(".title").html(data.metrics[key]["name"]);
         $newRow.click(function() {
@@ -179,46 +178,52 @@ $(function() {
             refreshPopup();
         });
     }
-    
+
     $rowTemplate.remove();
 
     //
     // Create numbered pins
     //
+
+//    console.log(states);
+
     for (i in states) {
         var state = states[i];
 
         var $state = $(".state-" + state);
 
-        var coordinates = $state[0].getBBox();
+        if ($state.length > 0) {
 
-        var $statePin = $("<div>").attr("class", "state-pin pin-" + state).html(
-                "<div class=\"number\">" + "</div>"
-                + "<div class=\"detail\">"
-                + "  <div class=\"title\">R&amp;D Výdaje</div>"
-                + "  <div class=\"content\">"
-                + "    <div class=\"left\">"
-                + "      <span class=\"value\">100</span>"
-                + "      <span class=\"points\">b</span>"
-                + "    </div>"
-                + "    <div class=\"right\">"
-                + "      <div class=\"line\"><span class=\"score\">1/28</span></div>"
-                + "      <div class=\"line\"><span class=\"percentage\">1,4%</span></div>"
-                + "      <div class=\"comment\">Dom. s připojením k internetu</div>"
-                + "    </div>"
-                + "  </div>"
-                + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
-                + "</div>"
-                );
-        $statePin.css("left", 100 / (700 / (coordinates.x + coordinates.width / 2 - data.states[state]["pinFix"]["x"])) + "%");
-        $statePin.css("bottom", 100 - (100 / ((700 * 0.79) / (coordinates.y + coordinates.height / 2 - data.states[state]["pinFix"]["y"]))) + "%");
-        //$svgContainer.append($statePin);
-        $wrapper.append($statePin);
-        $statePin.find(".btn-detail").click(function() {
-            $popupStateSelector1.val($(this).attr("data-state"));
-            $popupStateSelector2.val(data.mainState);
-            openPopup();
-        });
+            var coordinates = $state[0].getBBox();
+
+            var $statePin = $("<div>").attr("class", "state-pin pin-" + state).html(
+                    "<div class=\"number\">" + "</div>"
+                    + "<div class=\"detail\">"
+                    + "  <div class=\"title\">R&amp;D Výdaje</div>"
+                    + "  <div class=\"content\">"
+                    + "    <div class=\"left\">"
+                    + "      <span class=\"value\">100</span>"
+                    + "      <span class=\"points\">b</span>"
+                    + "    </div>"
+                    + "    <div class=\"right\">"
+                    + "      <div class=\"line\"><span class=\"score\">1/28</span></div>"
+                    + "      <div class=\"line\"><span class=\"percentage\">1,4%</span></div>"
+                    + "      <div class=\"comment\">Dom. s připojením k internetu</div>"
+                    + "    </div>"
+                    + "  </div>"
+                    + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
+                    + "</div>"
+                    );
+            $statePin.css("left", 100 / (700 / (coordinates.x + coordinates.width / 2 - data.states[state]["pinFix"]["x"])) + "%");
+            $statePin.css("bottom", 100 - (100 / ((700 * 0.79) / (coordinates.y + coordinates.height / 2 - data.states[state]["pinFix"]["y"]))) + "%");
+            //$svgContainer.append($statePin);
+            $wrapper.append($statePin);
+            $statePin.find(".btn-detail").click(function() {
+                $popupStateSelector1.val($(this).attr("data-state"));
+                $popupStateSelector2.val(data.mainState);
+                openPopup();
+            });
+        }
     }
 
     for (i in metrics) {

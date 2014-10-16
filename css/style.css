@@ -156,23 +156,8 @@ ol {
     width: 66.66%;
   }
 }
-@font-face {
-  font-family: 'OpenSans-Regular';
-  src: url('../fonts/OpenSans-Regular.eot');
-  src: url('../fonts/OpenSans-Regular.woff') format('woff'), url('../fonts/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans-Regular.svg') format('svg');
-}
-@font-face {
-  font-family: 'OpenSans-Light';
-  src: url('../fonts/OpenSans-Light.eot');
-  src: url('../fonts/OpenSans-Light.woff') format('woff'), url('../fonts/OpenSans-Light.ttf') format('truetype'), url('../fonts/OpenSans-Light.svg') format('svg');
-}
-@font-face {
-  font-family: 'OpenSans-Semibold';
-  src: url('../fonts/OpenSans-Semibold.eot');
-  src: url('../fonts/OpenSans-Semibold.woff') format('woff'), url('../fonts/OpenSans-Semibold.ttf') format('truetype'), url('../fonts/OpenSans-Semibold.svg') format('svg');
-}
 body {
-  font-family: "OpenSans-Regular", Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: #005493;
@@ -267,7 +252,8 @@ body {
   display: inline-block;
   position: relative;
   width: 100%;
-  padding-bottom: 78.2%;
+  padding-bottom: 105.2%;
+  background: white;
   vertical-align: middle;
   overflow: hidden;
 }
@@ -472,6 +458,12 @@ body {
 }
 .popup-holder .popup .top-box .state .flag {
   text-align: center;
+}
+.popup-holder .popup .top-box .state .flag img {
+  max-width: 100%;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 .popup-holder .popup .top-box .state .points {
   margin: 10px 0;
