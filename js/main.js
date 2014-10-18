@@ -48,6 +48,7 @@ $(function() {
             });
 
             $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
+            $state.find(".name").html(data.states[state]["names"]["cs"]);
 
             $state.find(".score .value").html("0 / " + states.length);
 
@@ -242,7 +243,7 @@ $(function() {
     selectYear($popupYearSelector.val());
 
     //open dialog 'czech', 'a'
-//    openPopup();
+    openPopup();
     refreshPopup();
 
 //    for (i in states) {
