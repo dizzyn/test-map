@@ -626,7 +626,7 @@ body {
   height: 14px;
   background: white;
   float: right;
-  width: 80px;
+  width: 90px;
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .bar {
   background: #005493;
@@ -721,6 +721,11 @@ body {
   height: 8px;
   bottom: 11px;
   border-radius: 5px;
+}
+.bottom-bar .years .scale .inner {
+  background: red;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
 }
 .bottom-bar .years .year {
   color: black;

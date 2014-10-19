@@ -29,7 +29,7 @@ $(function() {
         var score = 1;
 //        console.log(data.states[state]["metrics"], metric);
         var points = data.states[state]["metrics"][metric][year][0];
-        
+
         for (i in states) {
             var state2 = states[i];
             if (state !== state2) {
@@ -64,6 +64,10 @@ $(function() {
             $(".bottom-table .row").each(function() {
                 var $row = $(this);
                 var metricKey = $row.attr("data-metric");
+//                console.log(state);
+//                console.log(data.states[state].metrics);
+//                console.log(metricKey);
+//                console.log(data.states[state].metrics[metricKey]);
                 $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + " " + data.metrics[metricKey]["sign"]);
                 $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
             });
@@ -186,6 +190,8 @@ $(function() {
         $years.prepend($newYear);
     }
 
+    $years.find(".year-template").remove();
+
     //add metrics to the selector and the bottom-table
 
     var $table = $popupHolder.find(".bottom-table");
@@ -209,9 +215,6 @@ $(function() {
     //
     // Create numbered pins
     //
-
-//    console.log(states);
-
     for (i in states) {
         var state = states[i];
 
@@ -262,6 +265,55 @@ $(function() {
         $menu.append($menuItem);
     }
 
+    //
+    // Play years
+    //
+    var yearTimer;
+    var yearPlayScale = 0;
+    var $scale = $(".years .scale");
+    var $scaleInner = $(".years .scale .inner");
+    var $btnPlay = $(".btn-play");
+    var $btnStop = $(".btn-stop");
+    var $yearsDivs = $(".years .year");
+    var yearsCount = $yearsDivs.length;
+
+    var stopYearTimer = function() {
+        window.clearTimeout(yearTimer);
+        $scaleInner.hide();
+        $btnPlay.show();
+        $btnStop.hide();
+    };
+
+    $btnPlay.click(function() {
+        yearPlayScale = 0;
+        $btnPlay.hide();
+        $btnStop.show();
+        $scaleInner.show();
+        yearTimer = setInterval(function() {
+            yearPlayScale++;
+            $scaleInner.css("width", ($scale.width() / 100) * yearPlayScale);
+
+            var correction = (100 / yearsCount / 2);
+
+            if ((yearPlayScale - correction) % (Math.floor(100 / yearsCount)) === 0) {
+                //$(".years .year.selected").removeClass("selected");                
+                //$($yearsDivs[(yearPlayScale + correction) / (100 / yearsCount) - 1]).addClass("selected");
+                selectYear($($yearsDivs[(yearPlayScale + correction) / (100 / yearsCount) - 1]).attr("data-year"))
+                selectMetric();
+            }
+
+            if (yearPlayScale > 99) {
+                stopYearTimer()
+            }
+        }, 100);
+    });
+
+    $(".btn-stop").click(function() {
+        stopYearTimer()
+    });
+
+
+
     //select first metrics
     selectMetric();
     selectYear($popupYearSelector.val());
@@ -280,5 +332,7 @@ $(function() {
 //        $("svg").append($state);
         this.classList.add("selected");
     });
+
+
 
 });
