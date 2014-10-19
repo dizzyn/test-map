@@ -23,6 +23,27 @@ $(function() {
     });
 
     //
+    // returns actual position n the table (x of all)
+    //
+    var getScore = function(state, metric, year) {
+        var score = 1;
+//        console.log(data.states[state]["metrics"], metric);
+        var points = data.states[state]["metrics"][metric][year][0];
+        
+        for (i in states) {
+            var state2 = states[i];
+            if (state !== state2) {
+                var points2 = data.states[state2]["metrics"][metric][year][0];
+                if (points < points2) {
+                    score++;
+                }
+            }
+        }
+
+        return score;
+    };
+
+    //
     // Refresh popup dialog according it's slectors
     //
     var refreshPopup = function(state, metrics) {
@@ -50,7 +71,7 @@ $(function() {
             $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
             $state.find(".name").html(data.states[state]["names"]["cs"]);
 
-            $state.find(".score .value").html("0 / " + states.length);
+            $state.find(".score .value").html(getScore(state, metricKey, year) + " / " + states.length);
 
             $state.find(".points .value").html(data.states[state].metrics[metricKey][year][0]);
 
@@ -154,12 +175,15 @@ $(function() {
         $popupYearSelector.append($("<option>").html(year));
 
         //years bottom bar
-        $years.prepend($years.find(".year-template").clone().addClass("year" + year).attr("data-year", year).show().html("<span class=\"label\">" + year + "</spen>").removeClass("year-template").click(function() {
+        var $newYear = $years.find(".year-template").clone();
+        $newYear.find(".label").html(year);
+        $newYear.addClass("year" + year).attr("data-year", year).show().removeClass("year-template").click(function() {
             var $this = $(this);
 
             selectYear($this.attr("data-year"))
             selectMetric();
-        }));
+        });
+        $years.prepend($newYear);
     }
 
     //add metrics to the selector and the bottom-table
@@ -243,19 +267,8 @@ $(function() {
     selectYear($popupYearSelector.val());
 
     //open dialog 'czech', 'a'
-    openPopup();
+//    openPopup();
     refreshPopup();
-
-//    for (i in states) {
-//        var state = states[i];
-//
-//    }
-
-//    var metrics = Object.keys(data);
-//
-//    for (metric in metrics) {
-//        
-//    } 
 
     $(".state").click(function() {
         var $state = $(this);
