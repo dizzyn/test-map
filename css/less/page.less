@@ -9,9 +9,9 @@ body {
 
 .wrapper {
     position: relative;
-    margin: 30px auto;
-    width: 50%;
-    min-width: 400px;
+    margin: 0px auto;
+//    width: 50%;
+    min-width: 450px;
     max-width: 700px;    
     .box-shadow(0px 0px 50px 0px rgba(0, 0, 0, 0.5));
 }
@@ -117,11 +117,10 @@ body {
     @pinDetailSize: 150px;
 
     .state-pin {
-        //      display: none; 
-        //width: @pinDetailSize;
-        width: @pinCircleSize;
-        margin: 0 ((@pinDetailSize - @pinCircleSize) / 2);
-
+        background: green;
+        height: 1px;
+        width: 1px;
+        
         position: absolute;
         text-align: center;
         line-height: @pinCircleSize;
@@ -129,15 +128,23 @@ body {
         cursor: pointer;
 
         .number {
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+            margin-left: -(@pinCircleSize / 2 - 4px);
             border-radius: @pinCircleSize;
             background: #005593;
             display: block;
-            margin: 0 auto;
             width: @pinCircleSize;
             height: @pinCircleSize;
         }
 
         .detail {
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+            margin-left: -(@pinDetailSize / 2 - 4px);
+            width: @pinDetailSize;
             transition: opacity 0.5s ease;        
             border-radius: 5px;
             background: #005593;
@@ -204,8 +211,8 @@ body {
         }
 
         &:after {
-            margin-left: (@pinCircleSize / 2 - 4px);
-            margin-top: -1px;
+            margin-left: 0;
+            margin-top: -6px;
             display: block;
             content: "";
             width: 0; 
@@ -222,10 +229,10 @@ body {
 
         &:hover, &.open {
             z-index: 100;
-            width: @pinDetailSize;
+//            width: @pinDetailSize;
             margin: 0 0;
             &:after {
-                margin-left: (@pinDetailSize / 2 - 4px);
+//                margin-left: (@pinDetailSize / 2 - 4px);
             }
             .detail {
             }

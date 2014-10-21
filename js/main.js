@@ -50,7 +50,7 @@ $(function() {
         //
         for (var i = 1; i < 3; i++) {
             var $state = $popupHolder.find(".state" + i);
-
+//
             var state = $popupHolder.find(".state-selector-" + i).val();
             var year = $popupYearSelector.val();
             var metricKey = $popupMetricSelector.val();
@@ -68,19 +68,29 @@ $(function() {
 //                console.log(data.states[state].metrics);
 //                console.log(metricKey);
 //                console.log(data.states[state].metrics[metricKey]);
-                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + " " + data.metrics[metricKey]["sign"]);
+                $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
+                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey]["sign"]);
                 $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
+                $row.find(".subrow-" + i + " .desc").html(
+                        data.states[state].metrics[metricKey][year][1] + " " + metric.sign
+                        + ", "
+                        + getScore(state, metricKey, year) + " / " + states.length
+                        + " v eu"
+                        );
             });
 
+            console.log($state.find(".flag img").length)
+
             $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
-            $state.find(".name").html(data.states[state]["names"]["cs"]);
-
-            $state.find(".score .value").html(getScore(state, metricKey, year) + " / " + states.length);
-
-            $state.find(".points .value").html(data.states[state].metrics[metricKey][year][0]);
-
-            $state.find(".detail .number").html(data.states[state].metrics[metricKey][year][1] + " " + metric.sign);
-            $state.find(".detail .desc").html(metric.desc_suffix);
+            
+//            $state.find(".name").html(data.states[state]["names"]["cs"]);
+//
+//            $state.find(".score .value").html(getScore(state, metricKey, year) + " / " + states.length);
+//
+//            $state.find(".points .value").html(data.states[state].metrics[metricKey][year][0]);
+//
+//            $state.find(".detail .number").html(data.states[state].metrics[metricKey][year][1] + " " + metric.sign);
+//            $state.find(".detail .desc").html(metric.desc_suffix);
         }
     };
 
@@ -147,8 +157,8 @@ $(function() {
     //
     // Copy popup left state elements to right
     //
-    var $stateI = $popupHolder.find(".state1");
-    $stateI.clone().insertAfter($stateI).removeClass("state1").addClass("state2");
+//    var $stateI = $popupHolder.find(".state1");
+//    $stateI.clone().insertAfter($stateI).removeClass("state1").addClass("state2");
 
     //
     // Fill popup states,  metrics, years
@@ -169,8 +179,8 @@ $(function() {
     for (i in states) {
         var state = states[i];
 
-        $popupStateSelector1.append($("<option value='" + state + "'>").html(data.states[state]["names"]["cs"]));
-        $popupStateSelector2.append($("<option value='" + state + "'>").html(data.states[state]["names"]["cs"]));
+        $popupStateSelector1.append($("<option value='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"]["cs"]));
+        $popupStateSelector2.append($("<option value='" + state + "'>").addClass("flag-").html(data.states[state]["names"]["cs"]));
     }
 
     $years.addClass("count" + data.years.length);
@@ -203,7 +213,9 @@ $(function() {
         $popupMetricSelector.append($("<option>").html(data.metrics[key]["name"]).attr("value", key));
 
         var $newRow = $rowTemplate.clone().appendTo($table).removeClass("row-template").addClass("row").addClass("row-metric-" + key).attr("data-metric", key);
-        $newRow.find(".title").html(data.metrics[key]["name"]);
+//        $newRow.addClass("state-" + state);
+        $newRow.find(".title .short").html(data.metrics[key]["name"]);
+        $newRow.find(".title .long").html(data.metrics[key]["info"]);
         $newRow.click(function() {
             $popupMetricSelector.val($(this).attr("data-metric"));
             refreshPopup();
@@ -220,7 +232,14 @@ $(function() {
 
         var $state = $(".state-" + state);
 
-        if (state == "czech-republic" && $state.length > 0) {
+        if (
+//                (
+//                 state == "cyprus"
+//                || state == "czech-republic"
+//                || state == "estonia"
+//                || state == "italy"
+//                ) && 
+                $state.length > 0) {
 
             var coordinates = $state[0].getBBox();
 
@@ -245,22 +264,26 @@ $(function() {
 
             var frame = $(".svg-content")[0].viewBox.baseVal;
             
-            var left = coordinates.x - (coordinates.width / 2);
+            var left = data.states[state]["pinFix"]["x"] + coordinates.x - (coordinates.width / 2);                        
+            var percLeft = left / ((frame.width) / 100);
+//            var percLeft = left / ((frame.width - frame.x) / 100);
             
-            console.log("left", left);
-            console.log("width", (frame.width - frame.x) / 100);
-            console.log("perc", left / ((frame.width) / 100) + "%");
+//            console.log("left", left);
+//            console.log("width", (frame.width - frame.x) / 100);
+//            console.log("perc", left / ((frame.width) / 100) + "%");
+
+            $statePin.css("left", percLeft + "%");           
+          
+            var top = data.states[state]["pinFix"]["y"] + coordinates.y - (coordinates.height / 2);                        
+            var percTop = top / ((frame.height) / 100);
             
-            var percLeft = left / ((frame.width - frame.x) / 100);
-//            $statePin.css("left", percLeft + "%");           
-                        
+            $statePin.css("top", percTop + "%");           
+            
 //            $statePin.css("left", 100 / (900 / (coordinates.x + coordinates.width / 2 - data.states[state]["pinFix"]["x"])) + "%");
 //            $statePin.css("bottom", 100 - (100 / ((900 * 0.79) / (coordinates.y + coordinates.height / 2 - data.states[state]["pinFix"]["y"]))) + "%");
-
             
-            $statePin.css("left", "50%");
-            $statePin.css("top", "50%");
-
+//            $statePin.css("left", "40%");
+//            $statePin.css("bottom", "40%");
             
             $svgContainer.append($statePin);
             //$wrapper.append($statePin);
@@ -337,7 +360,7 @@ $(function() {
     selectYear($popupYearSelector.val());
 
     //open dialog 'czech', 'a'
-//    openPopup();
+    //openPopup();
     refreshPopup();
 
     $(".state").click(function() {
