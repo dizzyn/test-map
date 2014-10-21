@@ -79,7 +79,7 @@ $(function() {
                         );
             });
 
-            console.log($state.find(".flag img").length)
+//            console.log($state.find(".flag img").length)
 
             $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
             
@@ -235,7 +235,7 @@ $(function() {
         if (
 //                (
 //                 state == "cyprus"
-//                || state == "czech-republic"
+//                 state == "czech-republic"
 //                || state == "estonia"
 //                || state == "italy"
 //                ) && 
@@ -263,8 +263,10 @@ $(function() {
                     );
 
             var frame = $(".svg-content")[0].viewBox.baseVal;
+
+//            console.log("2", $(".svg-content")[0].viewBox.baseVal);
             
-            var left = data.states[state]["pinFix"]["x"] + coordinates.x - (coordinates.width / 2);                        
+            var left = data.states[state]["pinFix"]["x"] + (-10) + coordinates.x - (coordinates.width / 2);                        
             var percLeft = left / ((frame.width) / 100);
 //            var percLeft = left / ((frame.width - frame.x) / 100);
             
@@ -274,7 +276,7 @@ $(function() {
 
             $statePin.css("left", percLeft + "%");           
           
-            var top = data.states[state]["pinFix"]["y"] + coordinates.y - (coordinates.height / 2);                        
+            var top = data.states[state]["pinFix"]["y"] + (-80) + coordinates.y - (coordinates.height / 2);                        
             var percTop = top / ((frame.height) / 100);
             
             $statePin.css("top", percTop + "%");           

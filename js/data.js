@@ -151,8 +151,8 @@ var data = {
                 "cs": "Belgie"
             },
             "pinFix": {
-                "x": -90,
-                "y": -55
+                "x": -80,
+                "y": -45
             },
             "metrics": {
                 "EIB": {
@@ -313,8 +313,8 @@ var data = {
                 "cs": "Chorvatsko"
             },
             "pinFix": {
-                "x": -15,
-                "y": 0
+                "x": -10,
+                "y": -10
             },
             "metrics": {
                 "EIB": {
@@ -395,7 +395,7 @@ var data = {
             },
             "pinFix": {
                 "x": 31,
-                "y": 21
+                "y": 10
             },
             "metrics": {
                 "EIB": {
@@ -556,8 +556,8 @@ var data = {
                 "cs": "Dánsko"
             },
             "pinFix": {
-                "x": -40,
-                "y": 0
+                "x": -30,
+                "y": 10
             },
             "metrics": {
                 "EIB": {
@@ -637,8 +637,8 @@ var data = {
                 "cs": "Estonsko"
             },
             "pinFix": {
-                "x": -15,
-                "y": -10
+                "x": 0,
+                "y": 0
             },
             "metrics": {
                 "EIB": {
@@ -1205,7 +1205,7 @@ var data = {
             },
             "pinFix": {
                 "x": 70,
-                "y": 130
+                "y": 100
             },
             "metrics": {
                 "EIB": {
@@ -1285,8 +1285,8 @@ var data = {
                 "cs": "Lotyšsko"
             },
             "pinFix": {
-                "x": 5,
-                "y": -5
+                "x": 20,
+                "y": 10
             },
             "metrics": {
                 "EIB": {
@@ -1366,7 +1366,7 @@ var data = {
                 "cs": "Litva"
             },
             "pinFix": {
-                "x": -15,
+                "x": -10,
                 "y": 0
             },
             "metrics": {
@@ -1447,8 +1447,8 @@ var data = {
                 "cs": "Lucembursko"
             },
             "pinFix": {
-                "x": -19,
-                "y": 0
+                "x": -8,
+                "y": 5
             },
             "metrics": {
                 "EIB": {
@@ -1609,8 +1609,8 @@ var data = {
                 "cs": "Nizozemsko"
             },
             "pinFix": {
-                "x": -30,
-                "y": -10
+                "x": -22,
+                "y": -0
             },
             "metrics": {
                 "EIB": {
@@ -1771,7 +1771,7 @@ var data = {
                 "cs": "Portugalsko"
             },
             "pinFix": {
-                "x": -40,
+                "x": -30,
                 "y": 40
             },
             "metrics": {
@@ -2014,7 +2014,7 @@ var data = {
                 "cs": "Slovinsko"
             },
             "pinFix": {
-                "x": -45,
+                "x": -40,
                 "y": -15
             },
             "metrics": {
@@ -2095,7 +2095,7 @@ var data = {
                 "cs": "Španělsko"
             },
             "pinFix": {
-                "x": 40,
+                "x": 70,
                 "y": 70
             },
             "metrics": {
@@ -2176,8 +2176,8 @@ var data = {
                 "cs": "Švédsko"
             },
             "pinFix": {
-                "x": 30,
-                "y": 130
+                "x": 40,
+                "y": 160
             },
             "metrics": {
                 "EIB": {
