@@ -189,6 +189,7 @@ body {
   clear: both;
 }
 .header .menu {
+  display: none;
   width: 200px;
   float: left;
   position: absolute;
@@ -235,6 +236,7 @@ body {
   text-decoration: underline;
 }
 .header .title {
+  display: none;
   border-left: 1px solid #14679F;
   margin-left: 201px;
   margin-right: 100px;
@@ -740,11 +742,11 @@ body {
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
-  width: 40px;
+  width: 30px;
   position: absolute;
   bottom: 36px;
   left: 50%;
-  margin-left: -30px;
+  margin-left: -25px;
 }
 .bottom-bar .years .year .pin {
   width: 0;
@@ -781,8 +783,8 @@ body {
 .bottom-bar .years .year:hover .label,
 .bottom-bar .years .year.selected .label {
   color: white;
-  padding: 10px 20px;
-  margin-left: -40px;
+  padding: 12px 12px;
+  margin-left: -27px;
 }
 .bottom-bar .years .year:hover .circle .inner,
 .bottom-bar .years .year.selected .circle .inner {

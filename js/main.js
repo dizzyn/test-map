@@ -220,7 +220,7 @@ $(function() {
 
         var $state = $(".state-" + state);
 
-        if ($state.length > 0) {
+        if (state == "czech-republic" && $state.length > 0) {
 
             var coordinates = $state[0].getBBox();
 
@@ -242,10 +242,28 @@ $(function() {
                     + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
                     + "</div>"
                     );
-            $statePin.css("left", 100 / (700 / (coordinates.x + coordinates.width / 2 - data.states[state]["pinFix"]["x"])) + "%");
-            $statePin.css("bottom", 100 - (100 / ((700 * 0.79) / (coordinates.y + coordinates.height / 2 - data.states[state]["pinFix"]["y"]))) + "%");
-            //$svgContainer.append($statePin);
-            $wrapper.append($statePin);
+
+            var frame = $(".svg-content")[0].viewBox.baseVal;
+            
+            var left = coordinates.x - (coordinates.width / 2);
+            
+            console.log("left", left);
+            console.log("width", (frame.width - frame.x) / 100);
+            console.log("perc", left / ((frame.width) / 100) + "%");
+            
+            var percLeft = left / ((frame.width - frame.x) / 100);
+//            $statePin.css("left", percLeft + "%");           
+                        
+//            $statePin.css("left", 100 / (900 / (coordinates.x + coordinates.width / 2 - data.states[state]["pinFix"]["x"])) + "%");
+//            $statePin.css("bottom", 100 - (100 / ((900 * 0.79) / (coordinates.y + coordinates.height / 2 - data.states[state]["pinFix"]["y"]))) + "%");
+
+            
+            $statePin.css("left", "50%");
+            $statePin.css("top", "50%");
+
+            
+            $svgContainer.append($statePin);
+            //$wrapper.append($statePin);
             $statePin.find(".btn-detail").click(function() {
                 $popupStateSelector1.val($(this).attr("data-state"));
                 $popupStateSelector2.val(data.mainState);
