@@ -12,7 +12,7 @@ var data = {
             "name": "Výdaje na R&D",
             "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
             "desc_suffix": "z HDP tvoří výdaje na R&D",
-            "sign": "%"
+            "sign": " % HDP"
         },
         "Patents": {
             "name": "Počet patentů",
@@ -36,31 +36,31 @@ var data = {
             "name": "Venture kapitál",
             "info": "Investice do start-up a seed venture kapitálu",
             "desc_suffix": "z HDP tvoří investice do venture kapitálu",
-            "sign": "%"
+            "sign": " % HDP"
         },
         "Broadband": {
             "name": "Připojení k internetu",
             "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
             "desc_suffix": "domácností připojených k vysokorychlostnímu internetu",
-            "sign": "%"
+            "sign": " % domácností"
         },
         "Educ_exp": {
             "name": "Výdaje na vzdělávání",
             "info": "Veřejné výdaje na vzdělávání vůči HDP",
             "desc_suffix": "z HDP tvoří veřejné výdaje na vzdělání",
-            "sign": "%"
+            "sign": " % HDP"
         },
         "Exports": {
             "name": "High-tech export",
             "info": "Podíl high-tech exportů na celkovém exportu",
             "desc_suffix": "z celkového exportu tvoří high-tech produkty",
-            "sign": "%"
+            "sign": " % z Exportu"
         },
         "E_Government": {
             "name": "eGovernment",
             "info": "Podíl domácností komunikujících se státní správou elektronicky",
             "desc_suffix": "domácností komunikuje se státní správou elektronicky",
-            "sign": "%"
+            "sign": " % domácností"
         }
 
     },
