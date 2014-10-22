@@ -1,0 +1,32 @@
+
+seznam Toma Randusů:
+
+1.vetsi rozsah barev
+2 nova podoba bubliny (mam pocit ze se mi tam bublina nevejde tak se mi nechce delat nova podoba dokud si nejak neurcite co s tim)
+3 prolinani barev
+4 texty v hlavicce
+5 u zakladniho indexu odstranit hodnoty a nechat jen poradi
+6 udelat jeste postup vlozeni na responzivni weby (s dynamickou sirkou)
+7. vlajecky na popup
+
+dodatečné drobnosti od Vítka Macháčků:
+
+8) barevné pozadí dropdown listu  na pop-upu
+9) po kliknutí na položku menu by se to menu mělo zavřít
+10) Přehrávání by mělo být mírně rychlejší
+11 Ten pop-up umístit doprostřed obrazovky
+12 eště budeme muset někdy řešit ten Download - akorat ještě nemáme ten finální soubor, das tam zatim přiložený, s tim, že ti časem pošleme nový?
+13 Taky bychom rádi odlišli EIB od ostatních subindexů v Pop-upu i v menu - možná by stačilo to dát jenom tučně? 
+
+postřehy Jana Jedličky:
+14  bublina se občas nevejde na obrazovku
+
+
+praktické rady Ivy Dlouhé: 
+15: odstranit nápis Menu
+16: Místo EIB používat Erste IB
+17: seřadit státy v dropdownlistu podle abecedy
+
+grafický mág Tomáš Grošup k nové podobě bubliny: 
+
+zmensit pismo :)
