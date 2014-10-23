@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     z-index: 101;
-
+    font-size: 12px;
     .popup {
         position: absolute;
         top: 10px;
@@ -52,7 +52,7 @@
                     .selector {
                         font-size: 12px;
                         height: 30px;
-//                        margin-left: 30px;
+                        //                        margin-left: 30px;
                         margin-bottom: 10px;
                         padding: 4px;
                     }
@@ -155,6 +155,28 @@
                         }
                         .long {
                             display: block;
+                        }
+                    }
+                }
+
+                &.row-metric-EIB {
+                    &, &.selected {
+                        .subrow-1, .subrow-2 {
+                            .bar {
+                                .points {
+                                    display: block;
+                                }
+                                .value {
+                                    display: none;
+                                }                            
+                            }
+                        }
+                    }
+                    &.selected {
+                        .subrow-1, .subrow-2 {
+                            .desc {
+                                display: block;
+                            }
                         }
                     }
                 }

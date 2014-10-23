@@ -9,6 +9,7 @@ $(function() {
     var $wrapper = $(".wrapper");
 
     var $popupHolder = $(".popup-holder");
+    var $popup = $(".popup-holder .popup");
 
     var $years = $(".bottom-bar .years");
 
@@ -71,12 +72,15 @@ $(function() {
                 $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
                 $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey]["sign"]);
                 $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
-                $row.find(".subrow-" + i + " .desc").html(
-                        data.states[state].metrics[metricKey][year][1] + " " + metric.sign
-                        + ", "
-                        + getScore(state, metricKey, year) + " / " + states.length
-                        + " v eu"
-                        );
+                var str = getScore(state, metricKey, year) + " / " + states.length
+                        + " v eu";
+                
+                if (metricKey !== "EIB") {
+                    str = data.states[state].metrics[metricKey][year][1] + " " + metric.sign
+                        + ", " + str;
+                }
+                
+                $row.find(".subrow-" + i + " .desc").html(str);
             });
 
 //            console.log($state.find(".flag img").length)
@@ -98,8 +102,16 @@ $(function() {
     // Open detail dialog, the secons state is always Czech
     //
     var openPopup = function() {
+
         $popupHolder.show();
         refreshPopup();
+
+        setTimeout(function() {
+            var holderHeight = $wrapper.height();
+            var popupHeight = $popup.height();
+            console.log(holderHeight, popupHeight);
+            $popup.css("top", (holderHeight - popupHeight) /2 + "px");
+        }, 100);                
     };
 
     //
@@ -132,6 +144,9 @@ $(function() {
         var metric = data.metrics[metricKey];
         $hint.html(metric.info);
 
+         $menu.find(".selected").removeClass("selected")
+         $menu.find(".menu-item-" + metricKey).addClass("selected");
+
         for (i in states) {
             var state = states[i];
 
@@ -140,6 +155,10 @@ $(function() {
 
             var value = data.states[state]["metrics"][metricKey][year][0];
             $statePin.find(".number").html(value);
+
+            $statePin.find(".left .value").html(value);
+            $statePin.find(".percentage").html(value);
+            $statePin.find(".comment").html(metric.desc_suffix);
 
             $state.css("fill", "rgba(255, 0, 0, ." + value + ")");
         }
@@ -246,20 +265,18 @@ $(function() {
             var $statePin = $("<div>").attr("class", "state-pin pin-" + state).html(
                     "<div class=\"number\">" + "</div>"
                     + "<div class=\"detail\">"
-                    + "  <div class=\"title\">R&amp;D Výdaje</div>"
+                    + "  <div class=\"title\">" + data.states[state]["names"]["cs"] + "</div>"
                     + "  <div class=\"content\">"
                     + "    <div class=\"left\">"
                     + "      <span class=\"value\">100</span>"
                     + "      <span class=\"points\">b</span>"
                     + "    </div>"
-                    + "    <div class=\"right\">"
-                    + "      <div class=\"line\"><span class=\"score\">1/28</span></div>"
-                    + "      <div class=\"line\"><span class=\"percentage\">1,4%</span></div>"
-                    + "      <div class=\"comment\">Dom. s připojením k internetu</div>"
-                    + "    </div>"
+                    + "    <span class=\"score\"></span>"
+                    + "    <span class=\"percentage\"></span>"
+                    + "    <div class=\"comment\">"
                     + "  </div>"
-                    + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
                     + "</div>"
+                    + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
                     );
 
             var frame = $(".svg-content")[0].viewBox.baseVal;
@@ -274,8 +291,12 @@ $(function() {
 //            console.log("width", (frame.width - frame.x) / 100);
 //            console.log("perc", left / ((frame.width) / 100) + "%");
 
-            $statePin.css("left", percLeft + "%");           
-          
+            $statePin.css("left", percLeft + "%");
+            
+            if (percLeft < 20) {
+                $statePin.addClass("too-left")
+            }
+            
             var top = data.states[state]["pinFix"]["y"] + (-80) + coordinates.y - (coordinates.height / 2);                        
             var percTop = top / ((frame.height) / 100);
             
@@ -299,11 +320,12 @@ $(function() {
 
     for (i in metrics) {
         var metric = metrics[i];
-
-        var $menuItem = $("<li>").html("<span data-metric=\"" + metric + "\">" + data.metrics[metric].name + "</span>").click(function(e) {
+        var label = data.metrics[metric].name;
+        var $menuItem = $("<li class=\"menu-item-" + metric + "\">").click(function(e) {
             $popupMetricSelector.val(e.target.getAttribute("data-metric"));
             selectMetric();
-        });
+            $menu.removeClass("opened");
+        }).html(label).attr("data-metric",  metric);
 
         $menu.append($menuItem);
     }
@@ -362,7 +384,7 @@ $(function() {
     selectYear($popupYearSelector.val());
 
     //open dialog 'czech', 'a'
-    //openPopup();
+//    openPopup();
     refreshPopup();
 
     $(".state").click(function() {
@@ -375,7 +397,6 @@ $(function() {
 //        $("svg").append($state);
         this.classList.add("selected");
     });
-
 
 
 });

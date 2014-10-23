@@ -10,7 +10,7 @@ body {
 .wrapper {
     position: relative;
     margin: 0px auto;
-//    width: 50%;
+    //    width: 50%;
     min-width: 450px;
     max-width: 700px;    
     .box-shadow(0px 0px 50px 0px rgba(0, 0, 0, 0.5));
@@ -54,14 +54,16 @@ body {
         }
         li {
             border-top: 1px solid #14679F;
-            span {
-                padding: 10px;
-                cursor: pointer;
+            cursor: pointer;
+            padding: 0 10px;
+            &.selected, &:hover {
+                background: @lightBlue;
             }
-            &:hover {
-                span {
-                    text-decoration: underline;
-                }
+            &.selected {
+
+            }
+            &.menu-item-EIB {
+                font-weight: bold;
             }
         }
     }
@@ -86,7 +88,7 @@ body {
     display: inline-block;
     position: relative;
     width: 100%;
-//    padding-bottom: 78.2%;
+    //    padding-bottom: 78.2%;
     padding-bottom: 105.2%;
     background: white;
     vertical-align: middle;
@@ -96,6 +98,7 @@ body {
         position: absolute;
         top: 0;
         right: 0;
+        max-width: 40%;
         .background-opacity(#10639D, .7);
         color: white;
         z-index: 3;
@@ -104,7 +107,7 @@ body {
         background-position-x: 5px;
         padding-left: 30px;
     }
-    
+
     .svg-content {
         display: inline-block;
         position: absolute;
@@ -113,137 +116,147 @@ body {
     }
 }
 
-    @pinCircleSize: 30px;
-    @pinDetailSize: 150px;
+@pinCircleSize: 22px;
+@pinDetailSize: 150px;
 
-    .state-pin {
-        background: green;
-        height: 1px;
-        width: 1px;
-        
+.state-pin {
+    background: green;
+    height: 1px;
+    width: 1px;
+
+    position: absolute;
+    text-align: center;
+    line-height: @pinCircleSize;
+    vertical-align: middle;
+    cursor: pointer;
+
+    .number {
         position: absolute;
+        left: 0;
+        bottom: 6px;
+        margin-left: -(@pinCircleSize / 2 - 4px);
+        border-radius: @pinCircleSize;
+        background: #005593;
+        display: block;
+        width: @pinCircleSize;
+        height: @pinCircleSize;
+        font-size: 12px;
+    }
+
+    .detail {
         text-align: center;
-        line-height: @pinCircleSize;
-        vertical-align: middle;
-        cursor: pointer;
-
-        .number {
-            position: absolute;
-            left: 0;
-            bottom: 6px;
-            margin-left: -(@pinCircleSize / 2 - 4px);
-            border-radius: @pinCircleSize;
-            background: #005593;
-            display: block;
-            width: @pinCircleSize;
-            height: @pinCircleSize;
+        position: absolute;
+        left: 0;
+        bottom: 6px;
+        margin-left: -(@pinDetailSize / 2 - 4px);
+        width: @pinDetailSize;
+        transition: opacity 0.5s ease;        
+        border-radius: 5px;
+        background: #005593;
+        display: none;
+        .title {
+            border-bottom: 1px solid white;
+            margin: 0 10px;
+            text-transform: uppercase;
+            //            font-weight: bold;
         }
-
-        .detail {
-            position: absolute;
-            left: 0;
-            bottom: 6px;
-            margin-left: -(@pinDetailSize / 2 - 4px);
-            width: @pinDetailSize;
-            transition: opacity 0.5s ease;        
-            border-radius: 5px;
-            background: #005593;
-            display: none;
-            .title {
-                border-bottom: 1px solid white;
-                margin: 0 10px;
-                text-transform: uppercase;
-            }
-            .content {
-                .clearfix();
-                line-height: 1.5;
-                padding: 2px 0;
-                .left {
-                    float: left;
-                    width: 50%;
-                    padding-top: 35px;
-                    text-align: center;                    
-                    .value {
-                        font-size: 28px;
-                    }
-                    .points {
-                        font-size: 14px;
-                    }
+        .content {
+            .clearfix();
+            line-height: 1.5;
+            padding: 2px 0;
+            text-align: left;                    
+            margin: 0 7px;
+            .left {
+                float: left;
+                width: 40%;
+                padding-top: 5px;
+                text-align: center;                    
+                .value {
+                    font-size: 28px;
                 }
-                .right {
-                    float: right;
-                    width: 50%;
-                    text-align: left;                    
-                    .line {
-
-                    }
-                    .score {
-                        background: white;
-                        color: @darkBlue;
-                        border-radius: 2px;
-                        padding: 1px 2px;
-                    }
-                    .percentage {
-
-                    }
-                    .comment {
-
-                    }
+                .points {
+                    font-size: 14px;
                 }
             }
-            .btn {
-                width: 90%;
+            .line {
+                display: inline;
+            }
+            .score {
+                display: inline;
                 background: white;
                 color: @darkBlue;
-                border-style: none;
-                border-radius: 3px;
-                text-transform: uppercase;
-                padding: 3px 0;
-                margin: 7px 0;
-                font-size: 12px;
-                cursor: pointer;
-                
-                &:hover {
-                    .background-opacity(white, .6);
-                    color: white;
-                }
-            }
-        }
-
-        &:after {
-            margin-left: 0;
-            margin-top: -6px;
-            display: block;
-            content: "";
-            width: 0; 
-            height: 0; 
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 8px solid #005593;
-            //border-top: 8px solid red;
-        }
-
-        &.pin-germany {
-            //            display: block;
-        }
-
-        &:hover, &.open {
-            z-index: 100;
-//            width: @pinDetailSize;
-            margin: 0 0;
-            &:after {
-//                margin-left: (@pinDetailSize / 2 - 4px);
-            }
-            .detail {
-            }
-            .number {
+                border-radius: 2px;
+                padding: 1px 2px;
                 display: none;
             }
-            .detail {
-                display: block;
+            .percentage {
+                display: inline;
+
+            }
+            .comment {
+                display: inline;
+
+            }
+        }
+        .btn {
+            width: 90%;
+            background: white;
+            color: @darkBlue;
+            border-style: none;
+            border-radius: 3px;
+            text-transform: uppercase;
+            padding: 3px 0;
+            margin: 7px 0;
+            font-size: 12px;
+            cursor: pointer;
+
+            &:hover {
+                .background-opacity(white, .6);
+                color: white;
             }
         }
     }
+
+    &:after {
+        margin-left: 0;
+        margin-top: -6px;
+        display: block;
+        content: "";
+        width: 0; 
+        height: 0; 
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 8px solid #005593;
+    }
+
+    &.pin-germany {
+    }
+
+    &:hover, &.open {
+        z-index: 100;
+        margin: 0 0;
+        &:after {
+        }
+        .detail {
+        }
+        .number {
+            display: none;
+        }
+        .detail {
+            display: block;
+        }
+    }
+
+    &.too-left {
+        opacity: .9;    
+        .number {
+            margin-left: -27px;
+        }
+        &:after {
+            margin-left: -20px;
+        }
+    }
+}
 
 
 .state {
