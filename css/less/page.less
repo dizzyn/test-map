@@ -24,7 +24,7 @@ body {
 
     .menu {
         display: none;
-        width: 200px;
+        width: 40px;
         float: left;
         position: absolute;
         z-index: 1;
@@ -47,7 +47,9 @@ body {
             }
         }
         ul {
+            width: 200px;
             display: none;
+            background: @darkBlue;
             &.opened {
                 display: block;
             }
@@ -68,14 +70,16 @@ body {
         }
     }
     .title {
-        display: none;
         border-left: 1px solid #14679F;
-        margin-left: 201px;
+        margin-left: 61px;
         margin-right: 100px;
         padding-left: 20px;
         text-transform: uppercase;
         line-height: 71px;
         font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+            text-overflow: ellipsis;
     }
     .logo-holder {
         width: 159px;

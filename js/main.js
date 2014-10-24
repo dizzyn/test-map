@@ -5,6 +5,7 @@ $(function() {
     var states = Object.keys(data.states);
 
     var $menu = $(".menu ul");
+    var $title = $(".header .title");
     var $svgContainer = $(".svg-container");
     var $wrapper = $(".wrapper");
 
@@ -34,6 +35,11 @@ $(function() {
         for (i in states) {
             var state2 = states[i];
             if (state !== state2) {
+            
+                if (!data.states[state2]["metrics"][metric]) {
+                    alert("Error: missing data: " + state2 + "/" + metric);                            
+                }
+
                 var points2 = data.states[state2]["metrics"][metric][year][0];
                 if (points < points2) {
                     score++;
@@ -144,14 +150,17 @@ $(function() {
         var metric = data.metrics[metricKey];
         $hint.html(metric.info);
 
-         $menu.find(".selected").removeClass("selected")
-         $menu.find(".menu-item-" + metricKey).addClass("selected");
+        $title.html(metric.name);
+
+        $menu.find(".selected").removeClass("selected")
+        $menu.find(".menu-item-" + metricKey).addClass("selected");
 
         for (i in states) {
             var state = states[i];
 
             var $state = $(".state-" + state);
             var $statePin = $(".pin-" + state);
+
 
             var value = data.states[state]["metrics"][metricKey][year][0];
             $statePin.find(".number").html(value);
@@ -368,16 +377,14 @@ $(function() {
             }
 
             if (yearPlayScale > 99) {
-                stopYearTimer()
+                stopYearTimer();
             }
-        }, 100);
+        }, 70);
     });
 
     $(".btn-stop").click(function() {
-        stopYearTimer()
+        stopYearTimer();
     });
-
-
 
     //select first metrics
     selectMetric();

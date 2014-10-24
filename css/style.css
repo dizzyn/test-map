@@ -189,7 +189,7 @@ body {
 }
 .header .menu {
   display: none;
-  width: 200px;
+  width: 40px;
   float: left;
   position: absolute;
   z-index: 1;
@@ -219,7 +219,9 @@ body {
   text-decoration: underline;
 }
 .header .menu ul {
+  width: 200px;
   display: none;
+  background: #005493;
 }
 .header .menu ul.opened {
   display: block;
@@ -237,14 +239,16 @@ body {
   font-weight: bold;
 }
 .header .title {
-  display: none;
   border-left: 1px solid #14679F;
-  margin-left: 201px;
+  margin-left: 61px;
   margin-right: 100px;
   padding-left: 20px;
   text-transform: uppercase;
   line-height: 71px;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .header .logo-holder {
   width: 159px;
@@ -799,5 +803,5 @@ body {
   width: 20%;
 }
 .bottom-bar .years.count6 .year {
-  width: 16.666666666666668%;
+  width: 16.66666667%;
 }
