@@ -422,6 +422,7 @@ body {
 }
 .state {
   fill: #F2F2F2;
+  transition: fill 2s;
 }
 .popup-holder {
   background-color: rgba(0, 0, 0, 0.7);

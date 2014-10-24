@@ -169,7 +169,7 @@ $(function() {
             $statePin.find(".percentage").html(value);
             $statePin.find(".comment").html(metric.desc_suffix);
 
-            $state.css("fill", "rgba(255, 0, 0, ." + value + ")");
+            $state.css("fill", "rgba(255, 0, 0, ." + (value) + ")");
         }
     };
 
