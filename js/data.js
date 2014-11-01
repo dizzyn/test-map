@@ -394,7 +394,7 @@ var data = {
             "cs": "Kypr"
         },
         "pinFix": {
-            "x": 31,
+            "x": 68,
             "y": 10
         },
         "metrics": {
@@ -637,7 +637,7 @@ var data = {
             "cs": "Estonsko"
         },
         "pinFix": {
-            "x": 0,
+            "x": -25,
             "y": 0
         },
         "metrics": {
@@ -719,7 +719,7 @@ var data = {
         },
         "pinFix": {
             "x": 30,
-            "y": 100
+            "y": 180
         },
         "metrics": {
             "EIB": {
@@ -1528,8 +1528,8 @@ var data = {
             "cs": "Malta"
         },
         "pinFix": {
-            "x": 20,
-            "y": 40
+            "x": 77,
+            "y": 45
         },
         "metrics": {
             "EIB": {
