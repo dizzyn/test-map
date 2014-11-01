@@ -42,11 +42,6 @@
                     margin: 0 3px;
                     position: relative;
                     .selector {
-//                        position: absolute;
-//                        left: 0;
-//                        right:0;
-  
-//                        overflow: hidden;
                         height: 24px;
                         font-size: 12px;
                         line-height: 24px;
@@ -87,7 +82,7 @@
                                 color: white;
                             }
                         }
-                        
+
                         .items {
                             height: 0;
                             overflow: hidden;
@@ -112,6 +107,29 @@
             .first {
                 .inner {
                     margin-left: 10px;
+                    .selector {
+                        div {
+                            color: white;
+                            background-color: @lightBlue; 
+                            &:hover {
+                                background-color: @darkBlue;
+                                color: white;
+                            }
+                        }
+                        div.handler {
+                            &:hover {
+                                background-color: @lightBlue;
+                            }
+                            &:before {
+                                border-left: 1px solid #333;
+                        }
+                        }
+                        &.open {
+                            .handler {
+                                border-bottom: 1px solid #333;
+                            }
+                        }
+                    }                
                 }                
             }
             .third {

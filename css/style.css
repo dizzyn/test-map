@@ -585,6 +585,23 @@ body {
 .popup-holder .popup .top-box .first .inner {
   margin-left: 10px;
 }
+.popup-holder .popup .top-box .first .inner .selector div {
+  color: white;
+  background-color: #9ad9e9;
+}
+.popup-holder .popup .top-box .first .inner .selector div:hover {
+  background-color: #005493;
+  color: white;
+}
+.popup-holder .popup .top-box .first .inner .selector div.handler:hover {
+  background-color: #9ad9e9;
+}
+.popup-holder .popup .top-box .first .inner .selector div.handler:before {
+  border-left: 1px solid #333;
+}
+.popup-holder .popup .top-box .first .inner .selector.open .handler {
+  border-bottom: 1px solid #333;
+}
 .popup-holder .popup .top-box .third {
   width: 24%;
 }
