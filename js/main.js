@@ -161,15 +161,26 @@ $(function() {
             var $state = $(".state-" + state);
             var $statePin = $(".pin-" + state);
 
+            var points = data.states[state]["metrics"][metricKey][year][0];
+            var value = data.states[state]["metrics"][metricKey][year][1];
 
-            var value = data.states[state]["metrics"][metricKey][year][0];
-            $statePin.find(".number").html(value);
+            if (metricKey === "EIB") {
+                value = points;
+            }
 
-            $statePin.find(".left .value").html(value);
-            $statePin.find(".percentage").html(value);
+            $statePin.find(".number").html(points);
+
+            $statePin.find(".left .value").html(points);
+            $statePin.find(".percentage").html(points);
             $statePin.find(".comment").html(value + " " + metric.desc_suffix);
 
-            $state.css("fill", "rgba(255, 0, 0, ." + (value) + ")");
+//            if (value === 100) {
+//                $state.css("fill", "rgba(255, 0, 0, 1)");
+//            } else {
+            $state.css("fill", "rgba(255, 0, 0, " + points * 0.01 + ")");
+//            }
+
+            $state.css("content", points);
         }
     };
 
@@ -282,7 +293,6 @@ $(function() {
     //
     for (i in states) {
         var state = states[i];
-
 
         (function(state) {
 

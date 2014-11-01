@@ -641,6 +641,10 @@ body {
 .popup-holder .popup .bottom-table .row .metrics:after {
   clear: both;
 }
+.popup-holder .popup .bottom-table .row .metrics .subrow-1,
+.popup-holder .popup .bottom-table .row .metrics .subrow-2 {
+  margin-right: 100px;
+}
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .desc,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .desc {
   display: none;
@@ -650,7 +654,6 @@ body {
   height: 16px;
   background: #9ad9e9;
   margin-right: 90px;
-  min-width: 110px;
   *zoom: 1;
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .bar:before,
@@ -676,6 +679,7 @@ body {
   background: white;
   float: right;
   width: 100px;
+  margin-right: -100px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
