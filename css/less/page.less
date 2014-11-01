@@ -10,7 +10,6 @@ body {
 .wrapper {
     position: relative;
     margin: 0px auto;
-    //    width: 50%;
     min-width: 450px;
     max-width: 700px;    
     .box-shadow(0px 0px 50px 0px rgba(0, 0, 0, 0.5));
@@ -60,6 +59,7 @@ body {
             padding: 0 10px;
             &.selected, &:hover {
                 background: @lightBlue;
+                color: @darkBlue;
             }
             &.selected {
 
@@ -160,32 +160,33 @@ body {
         display: none;
         .title {
             border-bottom: 1px solid white;
-            margin: 0 10px;
+            margin: 0 10px 5px;
             text-transform: uppercase;
-            //            font-weight: bold;
+            font-weight: bold;
         }
         .content {
             .clearfix();
-            line-height: 1.5;
+            line-height: 1.1;
             padding: 2px 0;
             text-align: left;                    
-            margin: 0 7px;
+            margin: 0 12px;
             .left {
                 float: left;
-                width: 40%;
+                width: 43%;
                 padding-top: 5px;
                 text-align: center;                    
+                padding-right: 3px;
                 .value {
                     font-size: 28px;
+                    font-weight: bold;
                 }
                 .points {
                     font-size: 14px;
+                    margin-left: -3px;
                 }
             }
-            .line {
-                display: inline;
-            }
             .score {
+                display: none;
                 display: inline;
                 background: white;
                 color: @darkBlue;
@@ -195,11 +196,14 @@ body {
             }
             .percentage {
                 display: inline;
-
+                display: none;
             }
             .comment {
                 display: inline;
-
+            }
+            .score, .percentage, .comment {
+                line-height: 1;
+                font-size: 12px;
             }
         }
         .btn {

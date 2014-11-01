@@ -234,6 +234,7 @@ body {
 .header .menu li.selected,
 .header .menu li:hover {
   background: #9ad9e9;
+  color: #005493;
 }
 .header .menu li.menu-item-EIB {
   font-weight: bold;
@@ -323,15 +324,16 @@ body {
 }
 .state-pin .detail .title {
   border-bottom: 1px solid white;
-  margin: 0 10px;
+  margin: 0 10px 5px;
   text-transform: uppercase;
+  font-weight: bold;
 }
 .state-pin .detail .content {
   *zoom: 1;
-  line-height: 1.5;
+  line-height: 1.1;
   padding: 2px 0;
   text-align: left;
-  margin: 0 7px;
+  margin: 0 12px;
 }
 .state-pin .detail .content:before,
 .state-pin .detail .content:after {
@@ -344,18 +346,18 @@ body {
 }
 .state-pin .detail .content .left {
   float: left;
-  width: 40%;
+  width: 43%;
   padding-top: 5px;
   text-align: center;
+  padding-right: 3px;
 }
 .state-pin .detail .content .left .value {
   font-size: 28px;
+  font-weight: bold;
 }
 .state-pin .detail .content .left .points {
   font-size: 14px;
-}
-.state-pin .detail .content .line {
-  display: inline;
+  margin-left: -3px;
 }
 .state-pin .detail .content .score {
   display: inline;
@@ -367,9 +369,16 @@ body {
 }
 .state-pin .detail .content .percentage {
   display: inline;
+  display: none;
 }
 .state-pin .detail .content .comment {
   display: inline;
+}
+.state-pin .detail .content .score,
+.state-pin .detail .content .percentage,
+.state-pin .detail .content .comment {
+  line-height: 1;
+  font-size: 12px;
 }
 .state-pin .detail .btn {
   width: 90%;
@@ -481,43 +490,116 @@ body {
 .popup-holder .popup .top-box .second,
 .popup-holder .popup .top-box .third {
   float: left;
-  width: 36%;
+  width: 38%;
 }
 .popup-holder .popup .top-box .first .inner,
 .popup-holder .popup .top-box .second .inner,
 .popup-holder .popup .top-box .third .inner {
-  padding: 0 10px;
-}
-.popup-holder .popup .top-box .first .inner .flag,
-.popup-holder .popup .top-box .second .inner .flag,
-.popup-holder .popup .top-box .third .inner .flag {
-  width: 20px;
-  float: left;
-  display: none;
-}
-.popup-holder .popup .top-box .first .inner .flag img,
-.popup-holder .popup .top-box .second .inner .flag img,
-.popup-holder .popup .top-box .third .inner .flag img {
-  height: 20px;
-  width: 30px;
-  -webkit-box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  height: 30px;
+  margin: 0 3px;
+  position: relative;
 }
 .popup-holder .popup .top-box .first .inner .selector,
 .popup-holder .popup .top-box .second .inner .selector,
 .popup-holder .popup .top-box .third .inner .selector {
+  height: 24px;
   font-size: 12px;
-  height: 30px;
-  margin-bottom: 10px;
-  padding: 4px;
+  line-height: 24px;
+}
+.popup-holder .popup .top-box .first .inner .selector div,
+.popup-holder .popup .top-box .second .inner .selector div,
+.popup-holder .popup .top-box .third .inner .selector div {
+  color: white;
+  background: #005493;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/ico-carot.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: block;
+  background-position: 5px 5px;
+  background-size: 20px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+.popup-holder .popup .top-box .first .inner .selector div:hover,
+.popup-holder .popup .top-box .second .inner .selector div:hover,
+.popup-holder .popup .top-box .third .inner .selector div:hover {
+  background-color: #9ad9e9;
+  color: #005493;
+}
+.popup-holder .popup .top-box .first .inner .selector div.handler,
+.popup-holder .popup .top-box .second .inner .selector div.handler,
+.popup-holder .popup .top-box .third .inner .selector div.handler {
+  cursor: default;
+}
+.popup-holder .popup .top-box .first .inner .selector div.handler:before,
+.popup-holder .popup .top-box .second .inner .selector div.handler:before,
+.popup-holder .popup .top-box .third .inner .selector div.handler:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  border-left: 1px solid #9ad9e9;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/ico-carot.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+.popup-holder .popup .top-box .first .inner .selector div.handler:before:hover,
+.popup-holder .popup .top-box .second .inner .selector div.handler:before:hover,
+.popup-holder .popup .top-box .third .inner .selector div.handler:before:hover {
+  opacity: .6;
+}
+.popup-holder .popup .top-box .first .inner .selector div.handler:hover,
+.popup-holder .popup .top-box .second .inner .selector div.handler:hover,
+.popup-holder .popup .top-box .third .inner .selector div.handler:hover {
+  background-color: #005493;
+  color: white;
+}
+.popup-holder .popup .top-box .first .inner .selector .items,
+.popup-holder .popup .top-box .second .inner .selector .items,
+.popup-holder .popup .top-box .third .inner .selector .items {
+  height: 0;
+  overflow: hidden;
+  background: none;
+  padding: 0;
+}
+.popup-holder .popup .top-box .first .inner .selector.open .items,
+.popup-holder .popup .top-box .second .inner .selector.open .items,
+.popup-holder .popup .top-box .third .inner .selector.open .items {
+  height: 400px;
+  overflow: auto;
+}
+.popup-holder .popup .top-box .first .inner .selector.open .handler,
+.popup-holder .popup .top-box .second .inner .selector.open .handler,
+.popup-holder .popup .top-box .third .inner .selector.open .handler {
+  border-bottom: 1px solid #9ad9e9;
+}
+.popup-holder .popup .top-box .first .inner {
+  margin-left: 10px;
 }
 .popup-holder .popup .top-box .third {
-  width: 28%;
+  width: 24%;
+}
+.popup-holder .popup .top-box .third .inner {
+  margin-right: 30px;
 }
 .popup-holder .popup .top-box .third .inner .selector {
-  margin-left: 0px;
-  margin-right: 0px;
+  overflow: hidden;
+}
+.popup-holder .popup .top-box .third .inner .selector div {
+  background-image: none;
+  padding-left: 10px;
+}
+.popup-holder .popup .top-box .third .inner .selector.open {
+  height: auto;
 }
 .popup-holder .popup .bottom-table {
   padding: 0 15px;
@@ -544,6 +626,7 @@ body {
 }
 .popup-holder .popup .bottom-table .row .title .long {
   display: none;
+  padding-right: 3px;
 }
 .popup-holder .popup .bottom-table .row .metrics {
   margin-left: 150px;
@@ -592,7 +675,10 @@ body {
   height: 16px;
   background: white;
   float: right;
-  width: 90px;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .bar .points,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .bar .points {
@@ -804,5 +890,5 @@ body {
   width: 20%;
 }
 .bottom-bar .years.count6 .year {
-  width: 16.66666667%;
+  width: 16.666666666666668%;
 }

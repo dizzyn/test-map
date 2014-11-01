@@ -35,9 +35,9 @@ $(function() {
         for (i in states) {
             var state2 = states[i];
             if (state !== state2) {
-            
+
                 if (!data.states[state2]["metrics"][metric]) {
-                    alert("Error: missing data: " + state2 + "/" + metric);                            
+                    alert("Error: missing data: " + state2 + "/" + metric);
                 }
 
                 var points2 = data.states[state2]["metrics"][metric][year][0];
@@ -58,9 +58,9 @@ $(function() {
         for (var i = 1; i < 3; i++) {
             var $state = $popupHolder.find(".state" + i);
 //
-            var state = $popupHolder.find(".state-selector-" + i).val();
-            var year = $popupYearSelector.val();
-            var metricKey = $popupMetricSelector.val();
+            var state = $popupHolder.find(".state-selector-" + i).data("val");
+            var year = $popupYearSelector.data("val");
+            var metricKey = $popupMetricSelector.data("val");
             var metric = data.metrics[metricKey];
 
             //deselect / select bottom table rows
@@ -80,19 +80,19 @@ $(function() {
                 $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
                 var str = getScore(state, metricKey, year) + " / " + states.length
                         + " v eu";
-                
+
                 if (metricKey !== "EIB") {
                     str = data.states[state].metrics[metricKey][year][1] + " " + metric.sign
-                        + ", " + str;
+                            + ", " + str;
                 }
-                
+
                 $row.find(".subrow-" + i + " .desc").html(str);
             });
 
 //            console.log($state.find(".flag img").length)
 
             $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
-            
+
 //            $state.find(".name").html(data.states[state]["names"]["cs"]);
 //
 //            $state.find(".score .value").html(getScore(state, metricKey, year) + " / " + states.length);
@@ -115,9 +115,9 @@ $(function() {
         setTimeout(function() {
             var holderHeight = $wrapper.height();
             var popupHeight = $popup.height();
-            console.log(holderHeight, popupHeight);
-            $popup.css("top", (holderHeight - popupHeight) /2 + "px");
-        }, 100);                
+//            console.log(holderHeight, popupHeight);
+            $popup.css("top", (holderHeight - popupHeight) / 2 + "px");
+        }, 100);
     };
 
     //
@@ -145,8 +145,8 @@ $(function() {
     //
     var selectMetric = function() {
 
-        var year = $popupYearSelector.val();
-        var metricKey = $popupMetricSelector.val();
+        var year = $popupYearSelector.data("val");
+        var metricKey = $popupMetricSelector.data("val");
         var metric = data.metrics[metricKey];
         $hint.html(metric.info);
 
@@ -167,7 +167,7 @@ $(function() {
 
             $statePin.find(".left .value").html(value);
             $statePin.find(".percentage").html(value);
-            $statePin.find(".comment").html(metric.desc_suffix);
+            $statePin.find(".comment").html(value + " " + metric.desc_suffix);
 
             $state.css("fill", "rgba(255, 0, 0, ." + (value) + ")");
         }
@@ -177,7 +177,7 @@ $(function() {
     // Selects a particular year
     //
     var selectYear = function(year) {
-        $popupYearSelector.val(year);
+        $popupYearSelector.data("val", year);
         $(".year").removeClass("selected");
         $(".year" + year).addClass("selected");
     };
@@ -191,41 +191,66 @@ $(function() {
     //
     // Fill popup states,  metrics, years
     //
-    var $popupStateSelector1 = $popupHolder.find(".state-selector-1").change(function() {
-        refreshPopup()
-    });
-    var $popupStateSelector2 = $popupHolder.find(".state-selector-2").change(function() {
-        refreshPopup()
-    });
-    var $popupYearSelector = $popupHolder.find(".year-selector").change(function() {
-        refreshPopup()
-    });
-    var $popupMetricSelector = $popupHolder.find(".metric-selector").change(function() {
-        refreshPopup()
-    });
+
+    var $popupStateSelector1 = $popupHolder.find(".state-selector-1").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"]["cs"]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
+        $(this).parent().toggleClass("open")
+    }));
+//            .change(function() { //todo !!!
+//        refreshPopup()
+//    });
+    var $popupStateSelector2 = $popupHolder.find(".state-selector-2").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"]["cs"]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
+        $(this).parent().toggleClass("open")
+    }));
+    //.change(function() {
+//        refreshPopup()
+//    });
+    var $popupYearSelector = $popupHolder.find(".year-selector").data("val", data.years[0]).append($("<div>").html(data.years[0]).addClass("handler").click(function() {
+        $(this).parent().toggleClass("open")
+    }));
+//    .change(function() {
+//        refreshPopup()
+//    });
+    var $popupMetricSelector = $popupHolder.find(".metric-selector").data("val", Object.keys(data.metrics)[0]);
+//            .change(function() {
+//        refreshPopup()
+//    });
 
     for (i in states) {
         var state = states[i];
-
-        $popupStateSelector1.append($("<option value='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"]["cs"]));
-        $popupStateSelector2.append($("<option value='" + state + "'>").addClass("flag-").html(data.states[state]["names"]["cs"]));
+        (function(state) {
+            $popupStateSelector1.find(".items").append($("<div data-val='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
+                $(this).parent().siblings(".handler").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
+                refreshPopup();
+            }));
+            $popupStateSelector2.find(".items").append($("<div dada-val='" + state + "'>").addClass("flag-").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
+                $(this).parent().siblings(".handler").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
+                refreshPopup();
+            }));
+        })(state)
     }
 
     $years.addClass("count" + data.years.length);
     for (i in data.years) {
         var year = data.years[i];
-        $popupYearSelector.append($("<option>").html(year));
 
-        //years bottom bar
-        var $newYear = $years.find(".year-template").clone();
-        $newYear.find(".label").html(year);
-        $newYear.addClass("year" + year).attr("data-year", year).show().removeClass("year-template").click(function() {
-            var $this = $(this);
+        (function(year) {
+            $popupYearSelector.append($("<div>").html(year).click(function() {
+                $(this).siblings(".handler").html(year).parent().toggleClass("open").data("val", year);
+                refreshPopup();
+            }));
 
-            selectYear($this.attr("data-year"))
-            selectMetric();
-        });
-        $years.prepend($newYear);
+            //years bottom bar
+            var $newYear = $years.find(".year-template").clone();
+            $newYear.find(".label").html(year);
+            $newYear.addClass("year" + year).attr("data-year", year).show().removeClass("year-template").click(function() {
+                var $this = $(this);
+
+                selectYear($this.attr("data-year"))
+                selectMetric();
+            });
+            $years.prepend($newYear);
+
+        })(year);
     }
 
     $years.find(".year-template").remove();
@@ -238,14 +263,14 @@ $(function() {
     var metricsKeys = Object.keys(data.metrics);
     for (i in metricsKeys) {
         var key = metricsKeys[i];
-        $popupMetricSelector.append($("<option>").html(data.metrics[key]["name"]).attr("value", key));
+        //  $popupMetricSelector.append($("<option>").html(data.metrics[key]["name"]).attr("value", key));
 
         var $newRow = $rowTemplate.clone().appendTo($table).removeClass("row-template").addClass("row").addClass("row-metric-" + key).attr("data-metric", key);
 //        $newRow.addClass("state-" + state);
         $newRow.find(".title .short").html(data.metrics[key]["name"]);
         $newRow.find(".title .long").html(data.metrics[key]["info"]);
         $newRow.click(function() {
-            $popupMetricSelector.val($(this).attr("data-metric"));
+            $popupMetricSelector.data("val", $(this).attr("data-metric"));
             refreshPopup();
         });
     }
@@ -258,83 +283,95 @@ $(function() {
     for (i in states) {
         var state = states[i];
 
-        var $state = $(".state-" + state);
 
-        if (
+        (function(state) {
+
+            var $state = $(".state-" + state);
+
+            if (
 //                (
 //                 state == "cyprus"
 //                 state == "czech-republic"
 //                || state == "estonia"
 //                || state == "italy"
 //                ) && 
-                $state.length > 0) {
+                    $state.length > 0) {
 
-            var coordinates = $state[0].getBBox();
+                var coordinates = $state[0].getBBox();
 
-            var $statePin = $("<div>").attr("class", "state-pin pin-" + state).html(
-                    "<div class=\"number\">" + "</div>"
-                    + "<div class=\"detail\">"
-                    + "  <div class=\"title\">" + data.states[state]["names"]["cs"] + "</div>"
-                    + "  <div class=\"content\">"
-                    + "    <div class=\"left\">"
-                    + "      <span class=\"value\">100</span>"
-                    + "      <span class=\"points\">b</span>"
-                    + "    </div>"
-                    + "    <span class=\"score\"></span>"
-                    + "    <span class=\"percentage\"></span>"
-                    + "    <div class=\"comment\">"
-                    + "  </div>"
-                    + "</div>"
-                    + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
-                    );
+                var $statePin = $("<div>").attr("class", "state-pin pin-" + state).html(
+                        "<div class=\"number\">" + "</div>"
+                        + "<div class=\"detail\">"
+                        + "  <div class=\"title\">" + data.states[state]["names"]["cs"] + "</div>"
+                        + "  <div class=\"content\">"
+                        + "    <div class=\"left\">"
+                        + "      <span class=\"value\">100</span>"
+                        + "      <span class=\"points\">b</span>"
+                        + "    </div>"
+                        + "    <span class=\"score\"></span>"
+                        + "    <span class=\"percentage\"></span>"
+                        + "    <div class=\"comment\">"
+                        + "  </div>"
+                        + "</div>"
+                        + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
+                        );
 
-            var frame = $(".svg-content")[0].viewBox.baseVal;
+                var frame = $(".svg-content")[0].viewBox.baseVal;
 
 //            console.log("2", $(".svg-content")[0].viewBox.baseVal);
-            
-            var left = data.states[state]["pinFix"]["x"] + (-10) + coordinates.x - (coordinates.width / 2);                        
-            var percLeft = left / ((frame.width) / 100);
+
+                var left = data.states[state]["pinFix"]["x"] + (-10) + coordinates.x - (coordinates.width / 2);
+                var percLeft = left / ((frame.width) / 100);
 //            var percLeft = left / ((frame.width - frame.x) / 100);
-            
+
 //            console.log("left", left);
 //            console.log("width", (frame.width - frame.x) / 100);
 //            console.log("perc", left / ((frame.width) / 100) + "%");
 
-            $statePin.css("left", percLeft + "%");
-            
-            if (percLeft < 20) {
-                $statePin.addClass("too-left")
-            }
-            
-            var top = data.states[state]["pinFix"]["y"] + (-80) + coordinates.y - (coordinates.height / 2);                        
-            var percTop = top / ((frame.height) / 100);
-            
-            $statePin.css("top", percTop + "%");           
-            
+                $statePin.css("left", percLeft + "%");
+
+                if (percLeft < 20) {
+                    $statePin.addClass("too-left")
+                }
+
+                var top = data.states[state]["pinFix"]["y"] + (-80) + coordinates.y - (coordinates.height / 2);
+                var percTop = top / ((frame.height) / 100);
+
+                $statePin.css("top", percTop + "%");
+
 //            $statePin.css("left", 100 / (900 / (coordinates.x + coordinates.width / 2 - data.states[state]["pinFix"]["x"])) + "%");
 //            $statePin.css("bottom", 100 - (100 / ((900 * 0.79) / (coordinates.y + coordinates.height / 2 - data.states[state]["pinFix"]["y"]))) + "%");
-            
+
 //            $statePin.css("left", "40%");
 //            $statePin.css("bottom", "40%");
-            
-            $svgContainer.append($statePin);
-            //$wrapper.append($statePin);
-            $statePin.find(".btn-detail").click(function() {
-                $popupStateSelector1.val($(this).attr("data-state"));
-                $popupStateSelector2.val(data.mainState);
-                openPopup();
-            });
-        }
+
+                $svgContainer.append($statePin);
+                //$wrapper.append($statePin);
+                $statePin.find(".btn-detail").click(function() {
+                    $popupStateSelector1.data("val", $(this).attr("data-state"));
+
+                    $popupStateSelector1.find(".handler").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)");
+                    $popupStateSelector1.data("val", state);
+
+                    $popupStateSelector2.find(".handler").html(data.states[data.mainState]["names"]["cs"]).css("background-image", "url(img/flags/" + data.mainState + ".png)");
+                    $popupStateSelector2.data("val", data.mainState);
+
+                    refreshPopup();
+                    openPopup();
+                });
+            }
+        })(state);
     }
 
     for (i in metrics) {
         var metric = metrics[i];
         var label = data.metrics[metric].name;
         var $menuItem = $("<li class=\"menu-item-" + metric + "\">").click(function(e) {
-            $popupMetricSelector.val(e.target.getAttribute("data-metric"));
+            $popupMetricSelector.data("val", e.target.getAttribute("data-metric"));
             selectMetric();
+            refreshPopup();
             $menu.removeClass("opened");
-        }).html(label).attr("data-metric",  metric);
+        }).html(label).attr("data-metric", metric);
 
         $menu.append($menuItem);
     }
@@ -388,7 +425,7 @@ $(function() {
 
     //select first metrics
     selectMetric();
-    selectYear($popupYearSelector.val());
+    selectYear($popupYearSelector.data("val"));
 
     //open dialog 'czech', 'a'
 //    openPopup();

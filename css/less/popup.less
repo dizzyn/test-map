@@ -36,36 +36,97 @@
             padding-bottom: 0px;
             .first, .second, .third {
                 float: left;
-                width: 36%;
+                width: 38%;
                 .inner {
-                    padding: 0 10px;
-                    .flag {
-                        width: 20px;
-                        float: left;
-                        display: none;
-                        img {
-                            height: 20px;
-                            width: 30px;
-                            .box-shadow(2px 2px rgba(0, 0, 0, .2))
-                        }
-                    }
+                    height: 30px;
+                    margin: 0 3px;
+                    position: relative;
                     .selector {
+//                        position: absolute;
+//                        left: 0;
+//                        right:0;
+  
+//                        overflow: hidden;
+                        height: 24px;
                         font-size: 12px;
-                        height: 30px;
-                        //                        margin-left: 30px;
-                        margin-bottom: 10px;
-                        padding: 4px;
+                        line-height: 24px;
+
+                        div {
+                            color: white;
+                            background: @darkBlue;                            
+                            .single-background-image-replacement(url(../img/ico-carot.png));
+                            display: block;
+                            background-position: 5px 5px;
+                            background-size: 20px;
+                            padding-left: 30px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: @lightBlue;
+                                color: @darkBlue;
+                            }
+                        }
+
+                        div.handler {
+                            cursor: default;
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                bottom: 0;
+                                width: 20px;
+                                border-left: 1px solid @lightBlue;
+                                .single-background-image-replacement(url(../img/ico-carot.png), 25px);
+                                cursor: pointer;
+                                &:hover {
+                                    opacity: .6;
+                                }
+                            }
+                            &:hover {
+                                background-color: @darkBlue;
+                                color: white;
+                            }
+                        }
+                        
+                        .items {
+                            height: 0;
+                            overflow: hidden;
+                            background: none;
+                            padding: 0;
+                        }
+
+                        &.open {
+                            .items {
+                                height: 400px;                                
+                                overflow: auto;
+                            }
+                            .handler {
+                                border-bottom: 1px solid @lightBlue;
+                            }
+                        }
                     }
                     .state-selector-2, .state-selector-1 {
                     }
                 }
             }
-            .third {
-                width: 28%;
+            .first {
                 .inner {
+                    margin-left: 10px;
+                }                
+            }
+            .third {
+                width: 24%;
+                .inner {
+                    margin-right: 30px;
                     .selector {
-                        margin-left: 0px;
-                        margin-right: 0px;
+                        overflow: hidden;
+                        div {
+                            background-image: none;
+                            padding-left: 10px;
+                        }
+                        &.open {
+                            height: auto;
+                        }
                     }
                 }
             }
@@ -87,7 +148,8 @@
 
                     }
                     .long {
-                        display: none;    
+                        display: none;  
+                        padding-right: 3px;
                     }
                 }
 
@@ -111,7 +173,10 @@
                                 height: 16px;
                                 background: white;
                                 float: right;
-                                width: 90px;
+                                width: 100px;
+                                overflow: hidden;
+                                text-overflow:ellipsis; 
+                                white-space: nowrap;
                             }
                             .points {
                                 display: none;
