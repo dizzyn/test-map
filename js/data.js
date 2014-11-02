@@ -5,61 +5,61 @@ var data = {
         "EIB": {
             "name": "Erste IB",
             "info": "Erste Inovační Barometr",
-            "desc_suffix": "v EIB",
+            "desc_suffix": " v Erste IB",
             "sign": " bodů"
         },
         "RnD": {
             "name": "Výdaje na R&D",
             "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
-            "desc_suffix": "z HDP tvoří výdaje na R&D",
+            "desc_suffix": " % z HDP tvoří výdaje na R&D",
             "sign": " % HDP"
         },
         "Patents": {
             "name": "Počet patentů",
             "info": "Počet přihlášených patentů na 1 000 obyvatel",
-            "desc_suffix": "patentů na 1 000 obyvatel",
+            "desc_suffix": " patentů na 1 000 obyvatel",
             "sign": " patentů"
         },
         "Graduates": {
             "name": "Počet absolventů",
             "info": "Počet absolventů technických oborů na 1 000 obyvatel",
-            "desc_suffix": "absolventů na 1 000 obyvatel",
+            "desc_suffix": " absolventů na 1 000 obyvatel",
             "sign": " absolventů"
         },
         "Publications": {
             "name": "Počet publikací",
             "info": "Počet citovatelných publikací na 1 000 obyvatel",
-            "desc_suffix": "publikací na 1 000 obyvatel",
+            "desc_suffix": " publikací na 1 000 obyvatel",
             "sign": " publikací"
         },
         "Venture_cap": {
             "name": "Venture kapitál",
             "info": "Investice do start-up a seed venture kapitálu",
-            "desc_suffix": "z HDP tvoří investice do venture kapitálu",
+            "desc_suffix": " % z HDP tvoří investice do venture kapitálu",
             "sign": " % HDP"
         },
         "Broadband": {
             "name": "Připojení k internetu",
             "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
-            "desc_suffix": "domácností připojených k vysokorychlostnímu internetu",
+            "desc_suffix": " % domácností připojených k vysokorychlostnímu internetu",
             "sign": " % domácností"
         },
         "Educ_exp": {
             "name": "Výdaje na vzdělávání",
             "info": "Veřejné výdaje na vzdělávání vůči HDP",
-            "desc_suffix": "z HDP tvoří veřejné výdaje na vzdělání",
+            "desc_suffix": " z HDP tvoří veřejné výdaje na vzdělání",
             "sign": " % HDP"
         },
         "Exports": {
             "name": "High-tech export",
             "info": "Podíl high-tech exportů na celkovém exportu",
-            "desc_suffix": "z celkového exportu tvoří high-tech produkty",
+            "desc_suffix": " z celkového exportu tvoří high-tech produkty",
             "sign": " % z Exportu"
         },
         "E_Government": {
             "name": "eGovernment",
             "info": "Podíl domácností komunikujících se státní správou elektronicky",
-            "desc_suffix": "domácností komunikuje se státní správou elektronicky",
+            "desc_suffix": " domácností komunikuje se státní správou elektronicky",
             "sign": " % domácností"
         }
 
