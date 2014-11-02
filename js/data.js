@@ -5,7 +5,7 @@ var data = {
         "EIB": {
             "name": "Erste IB",
             "info": "Erste Inovační Barometr",
-            "desc_suffix": " v Erste IB",
+            "desc_suffix": " bodů v Erste IB",
             "sign": " bodů"
         },
         "RnD": {
@@ -2227,7 +2227,7 @@ var data = {
                 "2011": [91, 83.0000000],
                 "2012": [91, 86.0000000],
                 "2013": [90, 87.0000000],
-                "2014": [96, 91.8333333]
+                "2014": [96, 91.83]
             },
             "Educ_exp": {
                 "2010": [88, 6.6100000],
