@@ -441,7 +441,7 @@ body {
   left: 0;
   right: 0;
   z-index: 101;
-  font-size: 12px;
+  font-size: 11px;
 }
 .popup-holder .popup {
   position: absolute;
@@ -475,7 +475,7 @@ body {
 .popup-holder .popup .top-box {
   *zoom: 1;
   padding-top: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 10px;
 }
 .popup-holder .popup .top-box:before,
 .popup-holder .popup .top-box:after {
@@ -502,9 +502,9 @@ body {
 .popup-holder .popup .top-box .first .inner .selector,
 .popup-holder .popup .top-box .second .inner .selector,
 .popup-holder .popup .top-box .third .inner .selector {
-  height: 24px;
+  height: 34px;
   font-size: 12px;
-  line-height: 24px;
+  line-height: 34px;
 }
 .popup-holder .popup .top-box .first .inner .selector div,
 .popup-holder .popup .top-box .second .inner .selector div,
@@ -517,7 +517,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   display: block;
-  background-position: 5px 5px;
+  background-position: 5px 10px;
   background-size: 20px;
   padding-left: 30px;
   cursor: pointer;
@@ -542,9 +542,8 @@ body {
   top: 0;
   bottom: 0;
   width: 20px;
-  border-left: 1px solid #9ad9e9;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   display: inline-block;
   vertical-align: middle;
   background-image: url(../img/ico-carot.png);
@@ -580,7 +579,7 @@ body {
 .popup-holder .popup .top-box .first .inner .selector.open .handler,
 .popup-holder .popup .top-box .second .inner .selector.open .handler,
 .popup-holder .popup .top-box .third .inner .selector.open .handler {
-  border-bottom: 1px solid #9ad9e9;
+  border-bottom: 1px solid #ccc;
 }
 .popup-holder .popup .top-box .first .inner {
   margin-left: 10px;
@@ -596,11 +595,8 @@ body {
 .popup-holder .popup .top-box .first .inner .selector div.handler:hover {
   background-color: #9ad9e9;
 }
-.popup-holder .popup .top-box .first .inner .selector div.handler:before {
-  border-left: 1px solid #333;
-}
 .popup-holder .popup .top-box .first .inner .selector.open .handler {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #ccc;
 }
 .popup-holder .popup .top-box .third {
   width: 24%;
@@ -617,6 +613,20 @@ body {
 }
 .popup-holder .popup .top-box .third .inner .selector.open {
   height: auto;
+}
+.popup-holder .popup .top-box .third .inner .selector div {
+  color: white;
+  background-color: #aaa;
+}
+.popup-holder .popup .top-box .third .inner .selector div:hover {
+  background-color: #ccc;
+  color: white;
+}
+.popup-holder .popup .top-box .third .inner .selector div.handler:hover {
+  background-color: #aaa;
+}
+.popup-holder .popup .top-box .third .inner .selector.open .handler {
+  border-bottom: 1px solid #ccc;
 }
 .popup-holder .popup .bottom-table {
   padding: 0 15px;
@@ -649,6 +659,10 @@ body {
   margin-left: 150px;
   *zoom: 1;
 }
+.popup-holder .popup .bottom-table .row .metrics .wrap {
+  background: white;
+  margin-right: 90px;
+}
 .popup-holder .popup .bottom-table .row .metrics:before,
 .popup-holder .popup .bottom-table .row .metrics:after {
   display: table;
@@ -658,19 +672,14 @@ body {
 .popup-holder .popup .bottom-table .row .metrics:after {
   clear: both;
 }
-.popup-holder .popup .bottom-table .row .metrics .subrow-1,
-.popup-holder .popup .bottom-table .row .metrics .subrow-2 {
-  margin-right: 100px;
-}
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .desc,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .desc {
   display: none;
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .bar,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .bar {
-  height: 16px;
+  height: 14px;
   background: #9ad9e9;
-  margin-right: 90px;
   *zoom: 1;
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .bar:before,
@@ -689,14 +698,12 @@ body {
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .bar .value,
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .bar .points,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .bar .points {
-  font-size: 12px;
   line-height: 16px;
   padding: 0 4px;
-  height: 16px;
-  background: white;
+  height: 14px;
   float: right;
   width: 100px;
-  margin-right: -100px;
+  margin-right: -107px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -712,12 +719,6 @@ body {
 .popup-holder .popup .bottom-table .row.selected {
   background: #EDEDED;
 }
-.popup-holder .popup .bottom-table .row:hover .metrics .bar .value,
-.popup-holder .popup .bottom-table .row.selected .metrics .bar .value,
-.popup-holder .popup .bottom-table .row:hover .metrics .bar .points,
-.popup-holder .popup .bottom-table .row.selected .metrics .bar .points {
-  background: #EDEDED;
-}
 .popup-holder .popup .bottom-table .row.selected .subrow-1 .desc,
 .popup-holder .popup .bottom-table .row.selected .subrow-2 .desc {
   display: block;
@@ -730,11 +731,20 @@ body {
 .popup-holder .popup .bottom-table .row.selected .subrow-2 .bar .value {
   display: none;
 }
+.popup-holder .popup .bottom-table .row.selected .title {
+  line-height: 1.4;
+  font-weight: bold;
+}
 .popup-holder .popup .bottom-table .row.selected .title .short {
   display: none;
 }
 .popup-holder .popup .bottom-table .row.selected .title .long {
   display: block;
+}
+.popup-holder .popup .bottom-table .row.row-metric-EIB .title,
+.popup-holder .popup .bottom-table .row.row-metric-EIB.selected .title {
+  padding-left: 10px;
+  margin-right: -10px;
 }
 .popup-holder .popup .bottom-table .row.row-metric-EIB .subrow-1 .bar .points,
 .popup-holder .popup .bottom-table .row.row-metric-EIB.selected .subrow-1 .bar .points,

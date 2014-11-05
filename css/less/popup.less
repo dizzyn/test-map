@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     z-index: 101;
-    font-size: 12px;
+    font-size: 11px;
     .popup {
         position: absolute;
         top: 10px;
@@ -33,7 +33,7 @@
         .top-box {
             .clearfix();
             padding-top: 10px;
-            padding-bottom: 0px;
+            padding-bottom: 10px;
             .first, .second, .third {
                 float: left;
                 width: 38%;
@@ -42,16 +42,16 @@
                     margin: 0 3px;
                     position: relative;
                     .selector {
-                        height: 24px;
+                        height: 34px;
                         font-size: 12px;
-                        line-height: 24px;
+                        line-height: 34px;
 
                         div {
                             color: white;
                             background: @darkBlue;                            
                             .single-background-image-replacement(url(../img/ico-carot.png));
                             display: block;
-                            background-position: 5px 5px;
+                            background-position: 5px 10px;
                             background-size: 20px;
                             padding-left: 30px;
                             cursor: pointer;
@@ -70,8 +70,8 @@
                                 top: 0;
                                 bottom: 0;
                                 width: 20px;
-                                border-left: 1px solid @lightBlue;
-                                .single-background-image-replacement(url(../img/ico-carot.png), 25px);
+//                                border-left: 1px solid @lightBlue;
+                                .single-background-image-replacement(url(../img/ico-carot.png), 35px);
                                 cursor: pointer;
                                 &:hover {
                                     opacity: .6;
@@ -96,7 +96,7 @@
                                 overflow: auto;
                             }
                             .handler {
-                                border-bottom: 1px solid @lightBlue;
+                                border-bottom: 1px solid #ccc;
                             }
                         }
                     }
@@ -121,12 +121,12 @@
                                 background-color: @lightBlue;
                             }
                             &:before {
-                                border-left: 1px solid #333;
-                        }
+                              //  border-left: 1px solid #333;
+                            }
                         }
                         &.open {
                             .handler {
-                                border-bottom: 1px solid #333;
+                                border-bottom: 1px solid #ccc;
                             }
                         }
                     }                
@@ -144,6 +144,28 @@
                         }
                         &.open {
                             height: auto;
+                        }
+                        
+                        div {
+                            color: white;
+                            background-color: #aaa; 
+                            &:hover {
+                                background-color: #ccc; 
+                                color: white;
+                            }
+                        }
+                        div.handler {
+                            &:hover {
+                            background-color: #aaa; 
+                            }
+                            &:before {
+                              //  border-left: 1px solid #333;
+                            }
+                        }
+                        &.open {
+                            .handler {
+                                border-bottom: 1px solid #ccc;
+                            }
                         }
                     }
                 }
@@ -172,27 +194,27 @@
                 }
 
                 .metrics {
+                    .wrap {
+                        background: white;
+                        margin-right: 90px;
+                    }
                     margin-left: 150px;
                     .clearfix();
                     .subrow-1, .subrow-2 {
-                        margin-right: 100px;
                         .desc {
                             display: none;
                         }
                         .bar {
-                            height: 16px;
+                            height: 14px;
                             background: @lightBlue;
-                            margin-right: 90px;
                             .clearfix();
                             .value, .points {
-                                font-size: 12px;
                                 line-height: 16px;
                                 padding: 0 4px;
-                                height: 16px;
-                                background: white;
+                                height: 14px;
                                 float: right;
                                 width: 100px;
-                                margin-right: -100px;
+                                margin-right: -107px;
                                 overflow: hidden;
                                 text-overflow:ellipsis; 
                                 white-space: nowrap;
@@ -214,7 +236,7 @@
                     .metrics {
                         .bar {
                             .value, .points {
-                                background: #EDEDED;
+//                                background: #EDEDED;
                             }
                         }
                     }
@@ -234,6 +256,8 @@
                         }
                     }
                     .title {
+                        line-height: 1.4;
+                        font-weight: bold;
                         .short {
                             display: none;    
                         }
@@ -245,6 +269,10 @@
 
                 &.row-metric-EIB {
                     &, &.selected {
+                        .title {
+                            padding-left: 10px;                            
+                            margin-right: -10px;
+                        }
                         .subrow-1, .subrow-2 {
                             .bar {
                                 .points {

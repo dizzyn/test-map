@@ -438,7 +438,7 @@ $(function() {
     selectYear($popupYearSelector.data("val"));
 
     //open dialog 'czech', 'a'
-//    openPopup();
+    openPopup();
     refreshPopup();
 
     $(".state").click(function() {
