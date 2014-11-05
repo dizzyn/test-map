@@ -174,11 +174,7 @@ $(function() {
             $statePin.find(".percentage").html(points);
             $statePin.find(".comment").html(value + " " + metric.desc_suffix);
 
-//            if (value === 100) {
-//                $state.css("fill", "rgba(255, 0, 0, 1)");
-//            } else {
             $state.css("fill", "rgba(255, 0, 0, " + points * 0.01 + ")");
-//            }
 
             $state.css("content", points);
         }
@@ -438,7 +434,7 @@ $(function() {
     selectYear($popupYearSelector.data("val"));
 
     //open dialog 'czech', 'a'
-    openPopup();
+//    openPopup();
     refreshPopup();
 
     $(".state").click(function() {

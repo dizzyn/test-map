@@ -151,8 +151,8 @@ var data = {
             "cs": "Belgie"
         },
         "pinFix": {
-            "x": -80,
-            "y": -45
+            "x": -25,
+            "y": -8
         },
         "metrics": {
             "EIB": {
@@ -1447,8 +1447,8 @@ var data = {
             "cs": "Lucembursko"
         },
         "pinFix": {
-            "x": -8,
-            "y": 5
+            "x": -59,
+            "y": -29
         },
         "metrics": {
             "EIB": {
