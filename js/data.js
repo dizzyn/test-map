@@ -3,68 +3,68 @@ var data = {
     "mainState": "czech-republic",
     "metrics": {
         "EIB": {
-            "name": "EIB",
+            "name": "Erste IB",
             "info": "Erste Inovační Barometr",
-            "desc_suffix": "v EIB",
+            "desc_suffix": " bodů v Erste IB",
             "sign": " bodů"
         },
         "RnD": {
             "name": "Výdaje na R&D",
             "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
-            "desc_suffix": "z HDP tvoří výdaje na R&D",
+            "desc_suffix": " % z HDP tvoří výdaje na R&D",
             "sign": " % HDP"
         },
         "Patents": {
             "name": "Počet patentů",
             "info": "Počet přihlášených patentů na 1 000 obyvatel",
-            "desc_suffix": "patentů na 1 000 obyvatel",
+            "desc_suffix": " patentů na 1 000 obyvatel",
             "sign": " patentů"
         },
         "Graduates": {
             "name": "Počet absolventů",
             "info": "Počet absolventů technických oborů na 1 000 obyvatel",
-            "desc_suffix": "absolventů na 1 000 obyvatel",
+            "desc_suffix": " absolventů na 1 000 obyvatel",
             "sign": " absolventů"
         },
         "Publications": {
             "name": "Počet publikací",
             "info": "Počet citovatelných publikací na 1 000 obyvatel",
-            "desc_suffix": "publikací na 1 000 obyvatel",
+            "desc_suffix": " publikací na 1 000 obyvatel",
             "sign": " publikací"
         },
         "Venture_cap": {
             "name": "Venture kapitál",
             "info": "Investice do start-up a seed venture kapitálu",
-            "desc_suffix": "z HDP tvoří investice do venture kapitálu",
+            "desc_suffix": " % z HDP tvoří investice do venture kapitálu",
             "sign": " % HDP"
         },
         "Broadband": {
             "name": "Připojení k internetu",
             "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
-            "desc_suffix": "domácností připojených k vysokorychlostnímu internetu",
+            "desc_suffix": " % domácností připojených k vysokorychlostnímu internetu",
             "sign": " % domácností"
         },
         "Educ_exp": {
             "name": "Výdaje na vzdělávání",
             "info": "Veřejné výdaje na vzdělávání vůči HDP",
-            "desc_suffix": "z HDP tvoří veřejné výdaje na vzdělání",
+            "desc_suffix": " z HDP tvoří veřejné výdaje na vzdělání",
             "sign": " % HDP"
         },
         "Exports": {
             "name": "High-tech export",
             "info": "Podíl high-tech exportů na celkovém exportu",
-            "desc_suffix": "z celkového exportu tvoří high-tech produkty",
+            "desc_suffix": " z celkového exportu tvoří high-tech produkty",
             "sign": " % z Exportu"
         },
         "E_Government": {
             "name": "eGovernment",
             "info": "Podíl domácností komunikujících se státní správou elektronicky",
-            "desc_suffix": "domácností komunikuje se státní správou elektronicky",
+            "desc_suffix": " domácností komunikuje se státní správou elektronicky",
             "sign": " % domácností"
         }
 
     },
-    "states": {
+   "states": {
     "austria": {
         "names": {
             "cs": "Rakousko"
@@ -151,8 +151,8 @@ var data = {
             "cs": "Belgie"
         },
         "pinFix": {
-            "x": -80,
-            "y": -45
+            "x": -25,
+            "y": -8
         },
         "metrics": {
             "EIB": {
@@ -405,9 +405,12 @@ var data = {
                 "2013": [42, 0.0000000],
                 "2014": [46, 0.0000000]
             },
-            "pinFix": {
-                "x": 75,
-                "y": 10
+            "RnD": {
+                "2010": [21, 0.4300000],
+                "2011": [22, 0.4900000],
+                "2012": [21, 0.5000000],
+                "2013": [19, 0.4900000],
+                "2014": [17, 0.4600000]
             },
             "Patents": {
                 "2010": [41, 0.4900000],
@@ -422,13 +425,6 @@ var data = {
                 "2012": [3, 4.9000000],
                 "2013": [10, 7.2000000],
                 "2014": [15, 9.0000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [49, 1.4500000],
@@ -652,9 +648,12 @@ var data = {
                 "2013": [58, 0.0000000],
                 "2014": [57, 0.0000000]
             },
-            "pinFix": {
-                "x": -30,
-                "y": 0
+            "RnD": {
+                "2010": [44, 1.2800000],
+                "2011": [46, 1.4100000],
+                "2012": [51, 1.6200000],
+                "2013": [70, 2.3700000],
+                "2014": [64, 2.1800000]
             },
             "Patents": {
                 "2010": [31, 0.1200000],
@@ -669,13 +668,6 @@ var data = {
                 "2012": [36, 11.3000000],
                 "2013": [34, 11.9000000],
                 "2014": [37, 13.2000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [42, 1.2600000],
@@ -737,9 +729,12 @@ var data = {
                 "2013": [80, 0.0000000],
                 "2014": [80, 0.0000000]
             },
-            "pinFix": {
-                "x": 30,
-                "y": 150
+            "RnD": {
+                "2010": [100, 3.7000000],
+                "2011": [100, 3.9400000],
+                "2012": [100, 3.9000000],
+                "2013": [100, 3.8000000],
+                "2014": [100, 3.5500000]
             },
             "Patents": {
                 "2010": [99, 2.5200000],
@@ -754,13 +749,6 @@ var data = {
                 "2012": [100, 24.2000000],
                 "2013": [82, 21.2000000],
                 "2014": [82, 21.7000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [92, 2.6500000],
@@ -1308,9 +1296,12 @@ var data = {
                 "2013": [34, 0.0000000],
                 "2014": [32, 0.0000000]
             },
-            "pinFix": {
-                "x": 00,
-                "y": 10
+            "RnD": {
+                "2010": [26, 0.6200000],
+                "2011": [22, 0.4600000],
+                "2012": [24, 0.6000000],
+                "2013": [25, 0.7000000],
+                "2014": [23, 0.6600000]
             },
             "Patents": {
                 "2010": [32, 0.1800000],
@@ -1325,13 +1316,6 @@ var data = {
                 "2012": [33, 10.7000000],
                 "2013": [39, 12.8000000],
                 "2014": [36, 13.0000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [11, 0.3700000],
@@ -1393,9 +1377,12 @@ var data = {
                 "2013": [40, 0.0000000],
                 "2014": [40, 0.0000000]
             },
-            "pinFix": {
-                "x": -20,
-                "y": 10
+            "RnD": {
+                "2010": [31, 0.8000000],
+                "2011": [31, 0.8400000],
+                "2012": [29, 0.7900000],
+                "2013": [31, 0.9100000],
+                "2014": [29, 0.9000000]
             },
             "Patents": {
                 "2010": [28, 0.0400000],
@@ -1410,13 +1397,6 @@ var data = {
                 "2012": [76, 18.7000000],
                 "2013": [89, 22.6000000],
                 "2014": [89, 23.0000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [27, 0.8200000],
@@ -1467,8 +1447,8 @@ var data = {
             "cs": "Lucembursko"
         },
         "pinFix": {
-            "x": -8,
-            "y": 5
+            "x": -59,
+            "y": -29
         },
         "metrics": {
             "EIB": {
@@ -1498,13 +1478,6 @@ var data = {
                 "2012": [0, 2.7000000],
                 "2013": [0, 3.0000000],
                 "2014": [0, 2.8000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [53, 1.5700000],
@@ -1566,9 +1539,12 @@ var data = {
                 "2013": [48, 0.0000000],
                 "2014": [52, 0.0000000]
             },
-            "pinFix": {
-                "x": 75,
-                "y": 42
+            "RnD": {
+                "2010": [25, 0.5500000],
+                "2011": [23, 0.5300000],
+                "2012": [25, 0.6600000],
+                "2013": [25, 0.7100000],
+                "2014": [28, 0.8400000]
             },
             "Patents": {
                 "2010": [38, 0.3700000],
@@ -1583,13 +1559,6 @@ var data = {
                 "2012": [19, 8.0000000],
                 "2013": [6, 6.3000000],
                 "2014": [26, 11.1000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [17, 0.5500000],
@@ -2207,8 +2176,8 @@ var data = {
             "cs": "Švédsko"
         },
         "pinFix": {
-            "x": 20,
-            "y": 210
+            "x": 40,
+            "y": 160
         },
         "metrics": {
             "EIB": {
@@ -2218,9 +2187,12 @@ var data = {
                 "2013": [81, 0.0000000],
                 "2014": [80, 0.0000000]
             },
-            "pinFix": {
-                "x": 40,
-                "y": 180
+            "RnD": {
+                "2010": [100, 3.7000000],
+                "2011": [100, 3.6200000],
+                "2012": [99, 3.3900000],
+                "2013": [97, 3.3900000],
+                "2014": [97, 3.4100000]
             },
             "Patents": {
                 "2010": [97, 2.4400000],
@@ -2235,13 +2207,6 @@ var data = {
                 "2012": [51, 14.0000000],
                 "2013": [53, 15.6000000],
                 "2014": [49, 15.5000000]
-            },
-            "RnD": {
-                "2010": [-99, -99],
-                "2011": [-99, -99],
-                "2012": [-99, -99],
-                "2013": [-99, -99],
-                "2014": [-99, -99]
             },
             "Publications": {
                 "2010": [96, 2.7800000],
@@ -2262,7 +2227,7 @@ var data = {
                 "2011": [91, 83.0000000],
                 "2012": [91, 86.0000000],
                 "2013": [90, 87.0000000],
-                "2014": [96, 91.8333333]
+                "2014": [96, 91.83]
             },
             "Educ_exp": {
                 "2010": [88, 6.6100000],
