@@ -270,7 +270,7 @@ body {
   top: 0;
   right: 0;
   max-width: 40%;
-  background-color: rgba(16, 99, 158, 0.7);
+  background-color: rgba(16, 99, 157, 0.7);
   color: white;
   z-index: 3;
   padding: 5px 5px;
@@ -470,7 +470,7 @@ body {
   cursor: pointer;
 }
 .popup-holder .popup .btn-close:hover {
-  background-color: rgba(0, 84, 148, 0.8);
+  background-color: rgba(0, 84, 147, 0.8);
 }
 .popup-holder .popup .top-box {
   *zoom: 1;
@@ -585,15 +585,16 @@ body {
   margin-left: 10px;
 }
 .popup-holder .popup .top-box .first .inner .selector div {
-  color: white;
+  color: #005493;
   background-color: #9ad9e9;
 }
 .popup-holder .popup .top-box .first .inner .selector div:hover {
   background-color: #005493;
-  color: white;
+  color: #9ad9e9;
 }
 .popup-holder .popup .top-box .first .inner .selector div.handler:hover {
   background-color: #9ad9e9;
+  color: #005493;
 }
 .popup-holder .popup .top-box .first .inner .selector.open .handler {
   border-bottom: 1px solid #ccc;
@@ -615,15 +616,16 @@ body {
   height: auto;
 }
 .popup-holder .popup .top-box .third .inner .selector div {
-  color: white;
+  color: #005493;
   background-color: #aaa;
 }
 .popup-holder .popup .top-box .third .inner .selector div:hover {
   background-color: #ccc;
-  color: white;
+  color: #005493;
 }
 .popup-holder .popup .top-box .third .inner .selector div.handler:hover {
   background-color: #aaa;
+  color: #005493;
 }
 .popup-holder .popup .top-box .third .inner .selector.open .handler {
   border-bottom: 1px solid #ccc;
@@ -647,9 +649,10 @@ body {
   clear: both;
 }
 .popup-holder .popup .bottom-table .row .title {
-  width: 150px;
+  width: 140px;
   float: left;
   line-height: 24px;
+  padding-left: 10px;
 }
 .popup-holder .popup .bottom-table .row .title .long {
   display: none;
@@ -743,8 +746,7 @@ body {
 }
 .popup-holder .popup .bottom-table .row.row-metric-EIB .title,
 .popup-holder .popup .bottom-table .row.row-metric-EIB.selected .title {
-  padding-left: 10px;
-  margin-right: -10px;
+  padding-left: 0;
 }
 .popup-holder .popup .bottom-table .row.row-metric-EIB .subrow-1 .bar .points,
 .popup-holder .popup .bottom-table .row.row-metric-EIB.selected .subrow-1 .bar .points,
@@ -921,5 +923,5 @@ body {
   width: 20%;
 }
 .bottom-bar .years.count6 .year {
-  width: 16.666666666666668%;
+  width: 16.66666667%;
 }

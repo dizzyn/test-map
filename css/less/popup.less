@@ -7,6 +7,7 @@
     right: 0;
     z-index: 101;
     font-size: 11px;
+    
     .popup {
         position: absolute;
         top: 10px;
@@ -109,16 +110,17 @@
                     margin-left: 10px;
                     .selector {
                         div {
-                            color: white;
+                            color: @darkBlue;
                             background-color: @lightBlue; 
                             &:hover {
                                 background-color: @darkBlue;
-                                color: white;
+                                color: @lightBlue;
                             }
                         }
                         div.handler {
                             &:hover {
                                 background-color: @lightBlue;
+                                color: @darkBlue;
                             }
                             &:before {
                               //  border-left: 1px solid #333;
@@ -147,16 +149,17 @@
                         }
                         
                         div {
-                            color: white;
+                            color: @darkBlue;
                             background-color: #aaa; 
                             &:hover {
                                 background-color: #ccc; 
-                                color: white;
+                                color: @darkBlue;
                             }
                         }
                         div.handler {
                             &:hover {
-                            background-color: #aaa; 
+                                background-color: #aaa; 
+                                color: @darkBlue;
                             }
                             &:before {
                               //  border-left: 1px solid #333;
@@ -181,9 +184,12 @@
                 .clearfix();
 
                 .title {
-                    width:  150px;
+                    width:  140px;
                     float: left;
                     line-height: 24px;
+
+                    padding-left: 10px;                            
+                            
                     .short {
 
                     }
@@ -270,8 +276,7 @@
                 &.row-metric-EIB {
                     &, &.selected {
                         .title {
-                            padding-left: 10px;                            
-                            margin-right: -10px;
+                            padding-left: 0;
                         }
                         .subrow-1, .subrow-2 {
                             .bar {
