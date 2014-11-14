@@ -521,6 +521,7 @@ body {
   background-size: 20px;
   padding-left: 30px;
   cursor: pointer;
+  font-weight: bold;
 }
 .popup-holder .popup .top-box .first .inner .selector div:hover,
 .popup-holder .popup .top-box .second .inner .selector div:hover,
@@ -617,14 +618,14 @@ body {
 }
 .popup-holder .popup .top-box .third .inner .selector div {
   color: #005493;
-  background-color: #aaa;
+  background-color: #eee;
 }
 .popup-holder .popup .top-box .third .inner .selector div:hover {
-  background-color: #ccc;
+  background-color: #ddd;
   color: #005493;
 }
 .popup-holder .popup .top-box .third .inner .selector div.handler:hover {
-  background-color: #aaa;
+  background-color: #eee;
   color: #005493;
 }
 .popup-holder .popup .top-box .third .inner .selector.open .handler {
