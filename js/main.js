@@ -1,6 +1,8 @@
 
 $(function() {
 
+    var selectedLanguage = data.mainLanguage;
+
     var metrics = Object.keys(data.metrics);
     var states = Object.keys(data.states);
 
@@ -61,7 +63,7 @@ $(function() {
             var state = $popupHolder.find(".state-selector-" + i).data("val");
             var year = $popupYearSelector.data("val");
             var metricKey = $popupMetricSelector.data("val");
-            var metric = data.metrics[metricKey];
+            var metric = data.metrics[metricKey][selectedLanguage];
 
             //deselect / select bottom table rows
             $(".bottom-table .selected").removeClass("selected");
@@ -71,12 +73,12 @@ $(function() {
             $(".bottom-table .row").each(function() {
                 var $row = $(this);
                 var metricKey = $row.attr("data-metric");
-//                console.log(state);
+//                console.log(metric);
 //                console.log(data.states[state].metrics);
 //                console.log(metricKey);
 //                console.log(data.states[state].metrics[metricKey]);
                 $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
-                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey]["sign"]);
+                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey][selectedLanguage]["sign"]);
                 $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
                 var str = getScore(state, metricKey, year) + " / " + states.length
                         + " v eu";
@@ -147,7 +149,7 @@ $(function() {
 
         var year = $popupYearSelector.data("val");
         var metricKey = $popupMetricSelector.data("val");
-        var metric = data.metrics[metricKey];
+        var metric = data.metrics[metricKey][selectedLanguage];
         $hint.html(metric.info);
 
         $title.html(metric.name);
@@ -199,13 +201,13 @@ $(function() {
     // Fill popup states,  metrics, years
     //
 
-    var $popupStateSelector1 = $popupHolder.find(".state-selector-1").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"]["cs"]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
+    var $popupStateSelector1 = $popupHolder.find(".state-selector-1").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
         $(this).parent().toggleClass("open")
     }));
 //            .change(function() { //todo !!!
 //        refreshPopup()
 //    });
-    var $popupStateSelector2 = $popupHolder.find(".state-selector-2").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"]["cs"]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
+    var $popupStateSelector2 = $popupHolder.find(".state-selector-2").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
         $(this).parent().toggleClass("open")
     }));
     //.change(function() {
@@ -225,12 +227,12 @@ $(function() {
     for (i in states) {
         var state = states[i];
         (function(state) {
-            $popupStateSelector1.find(".items").append($("<div data-val='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
-                $(this).parent().siblings(".handler").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
+            $popupStateSelector1.find(".items").append($("<div data-val='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
+                $(this).parent().siblings(".handler").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
                 refreshPopup();
             }));
-            $popupStateSelector2.find(".items").append($("<div dada-val='" + state + "'>").addClass("flag-").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
-                $(this).parent().siblings(".handler").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
+            $popupStateSelector2.find(".items").append($("<div dada-val='" + state + "'>").addClass("flag-").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
+                $(this).parent().siblings(".handler").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
                 refreshPopup();
             }));
         })(state)
@@ -274,8 +276,8 @@ $(function() {
 
         var $newRow = $rowTemplate.clone().appendTo($table).removeClass("row-template").addClass("row").addClass("row-metric-" + key).attr("data-metric", key);
 //        $newRow.addClass("state-" + state);
-        $newRow.find(".title .short").html(data.metrics[key]["name"]);
-        $newRow.find(".title .long").html(data.metrics[key]["info"]);
+        $newRow.find(".title .short").html(data.metrics[key][selectedLanguage]["name"]);
+        $newRow.find(".title .long").html(data.metrics[key][selectedLanguage]["info"]);
         $newRow.click(function() {
             $popupMetricSelector.data("val", $(this).attr("data-metric"));
             refreshPopup();
@@ -308,7 +310,7 @@ $(function() {
                 var $statePin = $("<div>").attr("class", "state-pin pin-" + state).html(
                         "<div class=\"number\">" + "</div>"
                         + "<div class=\"detail\">"
-                        + "  <div class=\"title\">" + data.states[state]["names"]["cs"] + "</div>"
+                        + "  <div class=\"title\">" + data.states[state]["names"][selectedLanguage] + "</div>"
                         + "  <div class=\"content\">"
                         + "    <div class=\"left\">"
                         + "      <span class=\"value\">100</span>"
@@ -356,10 +358,10 @@ $(function() {
                 $statePin.find(".btn-detail").click(function() {
                     $popupStateSelector1.data("val", $(this).attr("data-state"));
 
-                    $popupStateSelector1.find(".handler").html(data.states[state]["names"]["cs"]).css("background-image", "url(img/flags/" + state + ".png)");
+                    $popupStateSelector1.find(".handler").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)");
                     $popupStateSelector1.data("val", state);
 
-                    $popupStateSelector2.find(".handler").html(data.states[data.mainState]["names"]["cs"]).css("background-image", "url(img/flags/" + data.mainState + ".png)");
+                    $popupStateSelector2.find(".handler").html(data.states[data.mainState]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + data.mainState + ".png)");
                     $popupStateSelector2.data("val", data.mainState);
 
                     refreshPopup();
@@ -371,7 +373,7 @@ $(function() {
 
     for (i in metrics) {
         var metric = metrics[i];
-        var label = data.metrics[metric].name;
+        var label = data.metrics[metric][selectedLanguage].name;
         var $menuItem = $("<li class=\"menu-item-" + metric + "\">").click(function(e) {
             $popupMetricSelector.data("val", e.target.getAttribute("data-metric"));
             selectMetric();
