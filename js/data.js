@@ -17,6 +17,12 @@ var data = {
                 "info": "Inovační Barometr",
                 "desc_suffix": " bodů v Erste IB",
                 "sign": " bodů"
+            },
+            "en": {
+                "name": "Innovation Barometer",
+                "info": "Innovation Barometer",
+                "desc_suffix": " pts in IB",
+                "sign": " pts"
             }
         },
         "RnD": {
@@ -25,6 +31,12 @@ var data = {
                 "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
                 "desc_suffix": " % z HDP tvoří výdaje na R&D",
                 "sign": " % HDP"
+            },
+            "en": {
+                "name": "R&D Expenditures",
+                "info": "Total R&D expenditers as a share of GDP",
+                "desc_suffix": " % of GDP are R&D expenditures",
+                "sign": " % of GDP"
             }
         },
         "Patents": {
@@ -33,6 +45,12 @@ var data = {
                 "info": "Počet přihlášených patentů na 1 000 obyvatel",
                 "desc_suffix": " patentů na 1 000 obyvatel",
                 "sign": " patentů"
+            },
+            "en": {
+                "name": "Patents",
+                "info": "Number of registered patents per 1 000 inhabitants",
+                "desc_suffix": " patents per 1 000 inhabitans",
+                "sign": " patents"
             }
         },
         "Graduates": {
@@ -41,6 +59,12 @@ var data = {
                 "info": "Počet absolventů technických oborů na 1 000 obyvatel",
                 "desc_suffix": " absolventů na 1 000 obyvatel",
                 "sign": " absolventů"
+            },
+            "en": {
+                "name": "Technical absolvents",
+                "info": "Number of technical fields absolvents per 1 000 inhabitants",
+                "desc_suffix": " absolvents per 1 000 inhabitants",
+                "sign": " absolvents"
             }
         },
         "Publications": {
@@ -49,7 +73,14 @@ var data = {
                 "info": "Počet citovatelných publikací na 1 000 obyvatel",
                 "desc_suffix": " publikací na 1 000 obyvatel",
                 "sign": " publikací"
+            },
+            "en": {
+                "name": "Publications",
+                "info": "Citable publications per 1 000 inhabitants",
+                "desc_suffix": " publications per 1 000 inhabitants",
+                "sign": " publications"
             }
+            
         },
         "Venture_cap": {
             "cs": {
@@ -57,6 +88,12 @@ var data = {
                 "info": "Investice do start-up a seed venture kapitálu",
                 "desc_suffix": " % z HDP tvoří investice do venture kapitálu",
                 "sign": " % HDP"
+            },
+            "en": {
+                "name": "Venture Capital",
+                "info": "Start-up and seed venture capital investments as a share of GDP",
+                "desc_suffix": " % of GDP are venture capital investment",
+                "sign": " % of GDP"
             }
         },
         "Broadband": {
@@ -65,6 +102,12 @@ var data = {
                 "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
                 "desc_suffix": " % domácností připojených k vysokorychlostnímu internetu",
                 "sign": " % domácností"
+            },
+            "en": {
+                "name": "Broadband Internet",
+                "info": "Share of households with broadband internet",
+                "desc_suffix": " % of households connected to broadband internet",
+                "sign": " % of households"
             }
         },
         "Educ_exp": {
@@ -73,6 +116,12 @@ var data = {
                 "info": "Veřejné výdaje na vzdělávání vůči HDP",
                 "desc_suffix": " z HDP tvoří veřejné výdaje na vzdělání",
                 "sign": " % HDP"
+            },
+            "en": {
+                "name": "Education Expenditures",
+                "info": "Public education expenditures as a share of GDP",
+                "desc_suffix": " % of GDP are public education expenditures",
+                "sign": " % of GDP"
             }
         },
         "Exports": {
@@ -81,6 +130,12 @@ var data = {
                 "info": "Podíl high-tech exportů na celkovém exportu",
                 "desc_suffix": " z celkového exportu tvoří high-tech produkty",
                 "sign": " % z Exportu"
+            },
+            "en": {
+                "name": "High-Tech Exports",
+                "info": "Share of High-Tech exports on total exports",
+                "desc_suffix": " % of total exports are high-tech exports",
+                "sign": " % of Exports"
             }
         },
         "E_Government": {
@@ -89,6 +144,12 @@ var data = {
                 "info": "Podíl domácností komunikujících se státní správou elektronicky",
                 "desc_suffix": " domácností komunikuje se státní správou elektronicky",
                 "sign": " % domácností"
+            },
+            "en": {
+                "name": "eGovernment",
+                "info": "Share of households communating with administration electronically",
+                "desc_suffix": " of households communicate electronically",
+                "sign": " % of households"
             }
         }
 
