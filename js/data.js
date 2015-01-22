@@ -240,7 +240,7 @@ var data = {
         "belgium": {
             "names": {
                 "cs": "Belgie",
-                "en": "Austria"
+                "en": "Belgium"
             },
             "pinFix": {
                 "x": -25,
@@ -322,7 +322,7 @@ var data = {
         "bulgaria": {
             "names": {
                 "cs": "Bulharsko",
-                "en": "Austria"
+                "en": "Bulgaria"
             },
             "pinFix": {
                 "x": -10,
@@ -404,7 +404,7 @@ var data = {
         "croatia": {
             "names": {
                 "cs": "Chorvatsko",
-                "en": "Austria"
+                "en": "Croatia"
             },
             "pinFix": {
                 "x": -10,
@@ -486,7 +486,7 @@ var data = {
         "cyprus": {
             "names": {
                 "cs": "Kypr",
-                "en": "Austria"
+                "en": "Cyprus"
             },
             "pinFix": {
                 "x": 68,
@@ -568,7 +568,7 @@ var data = {
         "czech-republic": {
             "names": {
                 "cs": "Česká republika",
-                "en": "Austria"
+                "en": "Czech Republic"
             },
             "pinFix": {
                 "x": 0,
@@ -650,7 +650,7 @@ var data = {
         "denmark": {
             "names": {
                 "cs": "Dánsko",
-                "en": "Austria"
+                "en": "Denmark"
             },
             "pinFix": {
                 "x": -30,
@@ -732,7 +732,7 @@ var data = {
         "estonia": {
             "names": {
                 "cs": "Estonsko",
-                "en": "Austria"
+                "en": "Estonia"
             },
             "pinFix": {
                 "x": -25,
@@ -814,7 +814,7 @@ var data = {
         "finland": {
             "names": {
                 "cs": "Finsko",
-                "en": "Austria"
+                "en": "Finland"
             },
             "pinFix": {
                 "x": 30,
@@ -896,7 +896,7 @@ var data = {
         "france": {
             "names": {
                 "cs": "Francie",
-                "en": "Austria"
+                "en": "France"
             },
             "pinFix": {
                 "x": 80,
@@ -978,7 +978,7 @@ var data = {
         "germany": {
             "names": {
                 "cs": "Německo",
-                "en": "Austria"
+                "en": "Germany"
             },
             "pinFix": {
                 "x": 20,
@@ -1060,7 +1060,7 @@ var data = {
         "greece": {
             "names": {
                 "cs": "Řecko",
-                "en": "Austria"
+                "en": "Greece"
             },
             "pinFix": {
                 "x": -10,
@@ -1142,7 +1142,7 @@ var data = {
         "hungary": {
             "names": {
                 "cs": "Maďarsko",
-                "en": "Austria"
+                "en": "Hungary"
             },
             "pinFix": {
                 "x": -5,
@@ -1224,7 +1224,7 @@ var data = {
         "ireland": {
             "names": {
                 "cs": "Irsko",
-                "en": "Austria"
+                "en": "Ireland"
             },
             "pinFix": {
                 "x": -21,
@@ -1306,7 +1306,7 @@ var data = {
         "italy": {
             "names": {
                 "cs": "Itálie",
-                "en": "Austria"
+                "en": "Italy"
             },
             "pinFix": {
                 "x": 70,
@@ -1388,7 +1388,7 @@ var data = {
         "latvia": {
             "names": {
                 "cs": "Lotyšsko",
-                "en": "Austria"
+                "en": "Latvia"
             },
             "pinFix": {
                 "x": 20,
@@ -1470,7 +1470,7 @@ var data = {
         "lithuania": {
             "names": {
                 "cs": "Litva",
-                "en": "Austria"
+                "en": "Lithuania"
             },
             "pinFix": {
                 "x": -10,
@@ -1552,7 +1552,7 @@ var data = {
         "luxembourg": {
             "names": {
                 "cs": "Lucembursko",
-                "en": "Austria"
+                "en": "Luxembourg"
             },
             "pinFix": {
                 "x": -59,
@@ -1634,7 +1634,7 @@ var data = {
         "malta": {
             "names": {
                 "cs": "Malta",
-                "en": "Austria"
+                "en": "Malta"
             },
             "pinFix": {
                 "x": 77,
@@ -1716,7 +1716,7 @@ var data = {
         "netherlands": {
             "names": {
                 "cs": "Nizozemsko",
-                "en": "Austria"
+                "en": "Netherlands"
             },
             "pinFix": {
                 "x": -22,
@@ -1798,7 +1798,7 @@ var data = {
         "poland": {
             "names": {
                 "cs": "Polsko",
-                "en": "Austria"
+                "en": "Poland"
             },
             "pinFix": {
                 "x": 40,
@@ -1880,7 +1880,7 @@ var data = {
         "portugal": {
             "names": {
                 "cs": "Portugalsko",
-                "en": "Austria"
+                "en": "Portugal"
             },
             "pinFix": {
                 "x": -30,
@@ -1962,7 +1962,7 @@ var data = {
         "romania": {
             "names": {
                 "cs": "Rumunsko",
-                "en": "Austria"
+                "en": "Romania"
             },
             "pinFix": {
                 "x": 20,
@@ -2044,7 +2044,7 @@ var data = {
         "slovak-republic": {
             "names": {
                 "cs": "Slovensko",
-                "en": "Austria"
+                "en": "Slovakia"
             },
             "pinFix": {
                 "x": -12,
@@ -2126,7 +2126,7 @@ var data = {
         "slovenia": {
             "names": {
                 "cs": "Slovinsko",
-                "en": "Austria"
+                "en": "Slovenia"
             },
             "pinFix": {
                 "x": -40,
@@ -2208,7 +2208,7 @@ var data = {
         "spain": {
             "names": {
                 "cs": "Španělsko",
-                "en": "Austria"
+                "en": "Spain"
             },
             "pinFix": {
                 "x": 70,
@@ -2290,7 +2290,7 @@ var data = {
         "sweden": {
             "names": {
                 "cs": "Švédsko",
-                "en": "Austria"
+                "en": "Sweden"
             },
             "pinFix": {
                 "x": 40,
@@ -2372,7 +2372,7 @@ var data = {
         "united-kingdom": {
             "names": {
                 "cs": "Velká Británie",
-                "en": "Austria"
+                "en": "United Kingdom"
             },
             "pinFix": {
                 "x": 20,
