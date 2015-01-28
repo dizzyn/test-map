@@ -4,10 +4,12 @@ var data = {
     "mainLanguage": "cs",
     "strings": {
         "cs": {        
-            "compare": "Porovnat"
+            "compare": "Porovnat",
+            "download-instr": "Upozornění: Pro správnou funkčnost souboru je třeba mít povolená makra v Excelu."
         },
         "en": {        
-            "compare": "Compare"
+            "compare": "Compare",
+            "download-instr": "Info: switch Excel macros on."
         }
     },
     "metrics": {

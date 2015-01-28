@@ -1,7 +1,13 @@
 
-$(function() {
+$(function () {
 
-    var selectedLanguage = data.mainLanguage;
+    var selectedLanguage = (typeof language === "undefined"?data.mainLanguage:language);
+
+    $(".state-label-malta").html(data.states["malta"]["names"][selectedLanguage]);
+    $(".state-label-cyprus").html(data.states["cyprus"]["names"][selectedLanguage]);
+
+    $(".btn-download").attr("title", data["strings"][selectedLanguage]["download-instr"]);
+
 
     var metrics = Object.keys(data.metrics);
     var states = Object.keys(data.states);
@@ -22,14 +28,14 @@ $(function() {
     // Open / Hide menu
     //
     var $menuTrigger = $(".menu-trigger");
-    $menuTrigger.click(function() {
+    $menuTrigger.click(function () {
         $menu.toggleClass("opened");
     });
 
     //
     // returns actual position n the table (x of all)
     //
-    var getScore = function(state, metric, year) {
+    var getScore = function (state, metric, year) {
         var score = 1;
 //        console.log(data.states[state]["metrics"], metric);
         var points = data.states[state]["metrics"][metric][year][0];
@@ -55,7 +61,7 @@ $(function() {
     //
     // Refresh popup dialog according it's slectors
     //
-    var refreshPopup = function(state, metrics) {
+    var refreshPopup = function (state, metrics) {
         //
         for (var i = 1; i < 3; i++) {
             var $state = $popupHolder.find(".state" + i);
@@ -70,7 +76,7 @@ $(function() {
             $(".bottom-table .row-metric-" + metricKey).addClass("selected");
 
             //fill bottom table data
-            $(".bottom-table .row").each(function() {
+            $(".bottom-table .row").each(function () {
                 var $row = $(this);
                 var metricKey = $row.attr("data-metric");
 //                console.log(metric);
@@ -109,12 +115,12 @@ $(function() {
     //
     // Open detail dialog, the secons state is always Czech
     //
-    var openPopup = function() {
+    var openPopup = function () {
 
         $popupHolder.show();
         refreshPopup();
 
-        setTimeout(function() {
+        setTimeout(function () {
             var holderHeight = $wrapper.height();
             var popupHeight = $popup.height();
 //            console.log(holderHeight, popupHeight);
@@ -125,16 +131,16 @@ $(function() {
     //
     // Close popup
     //
-    var closePopup = function(state, metrics) {
+    var closePopup = function (state, metrics) {
         $popupHolder.hide();
         refreshPopup();
     };
 
-    $popupHolder.find(".btn-close").click(function() {
+    $popupHolder.find(".btn-close").click(function () {
         closePopup()
     });
 
-    $popupHolder.click(function(e) {
+    $popupHolder.click(function (e) {
         var $target = $(e.target);
 
         if ($target.is(".popup-holder")) {
@@ -145,7 +151,7 @@ $(function() {
     //
     // Selects a particular metrics - repaint map
     //
-    var selectMetric = function() {
+    var selectMetric = function () {
 
         var year = $popupYearSelector.data("val");
         var metricKey = $popupMetricSelector.data("val");
@@ -185,7 +191,7 @@ $(function() {
     //
     // Selects a particular year
     //
-    var selectYear = function(year) {
+    var selectYear = function (year) {
         $popupYearSelector.data("val", year);
         $(".year").removeClass("selected");
         $(".year" + year).addClass("selected");
@@ -201,19 +207,19 @@ $(function() {
     // Fill popup states,  metrics, years
     //
 
-    var $popupStateSelector1 = $popupHolder.find(".state-selector-1").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
+    var $popupStateSelector1 = $popupHolder.find(".state-selector-1").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function () {
         $(this).parent().toggleClass("open")
     }));
 //            .change(function() { //todo !!!
 //        refreshPopup()
 //    });
-    var $popupStateSelector2 = $popupHolder.find(".state-selector-2").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function() {
+    var $popupStateSelector2 = $popupHolder.find(".state-selector-2").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function () {
         $(this).parent().toggleClass("open")
     }));
     //.change(function() {
 //        refreshPopup()
 //    });
-    var $popupYearSelector = $popupHolder.find(".year-selector").data("val", data.years[0]).append($("<div>").html(data.years[0]).addClass("handler").click(function() {
+    var $popupYearSelector = $popupHolder.find(".year-selector").data("val", data.years[0]).append($("<div>").html(data.years[0]).addClass("handler").click(function () {
         $(this).parent().toggleClass("open")
     }));
 //    .change(function() {
@@ -226,12 +232,12 @@ $(function() {
 
     for (i in states) {
         var state = states[i];
-        (function(state) {
-            $popupStateSelector1.find(".items").append($("<div data-val='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
+        (function (state) {
+            $popupStateSelector1.find(".items").append($("<div data-val='" + state + "'>").addClass("flag-" + state).html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").click(function () {
                 $(this).parent().siblings(".handler").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
                 refreshPopup();
             }));
-            $popupStateSelector2.find(".items").append($("<div dada-val='" + state + "'>").addClass("flag-").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").click(function() {
+            $popupStateSelector2.find(".items").append($("<div dada-val='" + state + "'>").addClass("flag-").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").click(function () {
                 $(this).parent().siblings(".handler").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)").parent().toggleClass("open").data("val", state);
                 refreshPopup();
             }));
@@ -242,8 +248,8 @@ $(function() {
     for (i in data.years) {
         var year = data.years[i];
 
-        (function(year) {
-            $popupYearSelector.append($("<div>").html(year).click(function() {
+        (function (year) {
+            $popupYearSelector.append($("<div>").html(year).click(function () {
                 $(this).siblings(".handler").html(year).parent().toggleClass("open").data("val", year);
                 refreshPopup();
             }));
@@ -251,7 +257,7 @@ $(function() {
             //years bottom bar
             var $newYear = $years.find(".year-template").clone();
             $newYear.find(".label").html(year);
-            $newYear.addClass("year" + year).attr("data-year", year).show().removeClass("year-template").click(function() {
+            $newYear.addClass("year" + year).attr("data-year", year).show().removeClass("year-template").click(function () {
                 var $this = $(this);
 
                 selectYear($this.attr("data-year"))
@@ -278,7 +284,7 @@ $(function() {
 //        $newRow.addClass("state-" + state);
         $newRow.find(".title .short").html(data.metrics[key][selectedLanguage]["name"]);
         $newRow.find(".title .long").html(data.metrics[key][selectedLanguage]["info"]);
-        $newRow.click(function() {
+        $newRow.click(function () {
             $popupMetricSelector.data("val", $(this).attr("data-metric"));
             refreshPopup();
         });
@@ -292,7 +298,7 @@ $(function() {
     for (i in states) {
         var state = states[i];
 
-        (function(state) {
+        (function (state) {
 
             var $state = $(".state-" + state);
 
@@ -321,7 +327,7 @@ $(function() {
                         + "    <div class=\"comment\">"
                         + "  </div>"
                         + "</div>"
-                        + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">Porovnat</button>"
+                        + "  <button data-state=\"" + state + "\" class=\"btn btn-detail\">" + data["strings"][selectedLanguage]["compare"] + "</button>"
                         );
 
                 var frame = $(".svg-content")[0].viewBox.baseVal;
@@ -355,7 +361,7 @@ $(function() {
 
                 $svgContainer.append($statePin);
                 //$wrapper.append($statePin);
-                $statePin.find(".btn-detail").click(function() {
+                $statePin.find(".btn-detail").click(function () {
                     $popupStateSelector1.data("val", $(this).attr("data-state"));
 
                     $popupStateSelector1.find(".handler").html(data.states[state]["names"][selectedLanguage]).css("background-image", "url(img/flags/" + state + ".png)");
@@ -374,7 +380,7 @@ $(function() {
     for (i in metrics) {
         var metric = metrics[i];
         var label = data.metrics[metric][selectedLanguage].name;
-        var $menuItem = $("<li class=\"menu-item-" + metric + "\">").click(function(e) {
+        var $menuItem = $("<li class=\"menu-item-" + metric + "\">").click(function (e) {
             $popupMetricSelector.data("val", e.target.getAttribute("data-metric"));
             selectMetric();
             refreshPopup();
@@ -396,19 +402,19 @@ $(function() {
     var $yearsDivs = $(".years .year");
     var yearsCount = $yearsDivs.length;
 
-    var stopYearTimer = function() {
+    var stopYearTimer = function () {
         window.clearTimeout(yearTimer);
         $scaleInner.hide();
         $btnPlay.show();
         $btnStop.hide();
     };
 
-    $btnPlay.click(function() {
+    $btnPlay.click(function () {
         yearPlayScale = 0;
         $btnPlay.hide();
         $btnStop.show();
         $scaleInner.show();
-        yearTimer = setInterval(function() {
+        yearTimer = setInterval(function () {
             yearPlayScale++;
             $scaleInner.css("width", ($scale.width() / 100) * yearPlayScale);
 
@@ -427,7 +433,7 @@ $(function() {
         }, 70);
     });
 
-    $(".btn-stop").click(function() {
+    $(".btn-stop").click(function () {
         stopYearTimer();
     });
 
@@ -439,10 +445,10 @@ $(function() {
 //    openPopup();
     refreshPopup();
 
-    $(".state").click(function() {
+    $(".state").click(function () {
         var $state = $(this);
 
-        $(".state.selected").each(function(i, item) {
+        $(".state.selected").each(function (i, item) {
             this.classList.remove("selected");
         });
 

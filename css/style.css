@@ -433,6 +433,19 @@ body {
   fill: #F2F2F2;
   transition: fill 2s;
 }
+.state-label-malta,
+.state-label-cyprus {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  top: 64.0%;
+  left: 9%;
+  font-size: 10px;
+}
+.state-label-malta.state-label-cyprus,
+.state-label-cyprus.state-label-cyprus {
+  top: 79.7%;
+}
 .popup-holder {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
