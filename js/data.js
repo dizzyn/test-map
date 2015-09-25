@@ -115,14 +115,14 @@ var data = {
         "Educ_exp": {
             "cs": {
                 "name": "Výdaje na vzdělávání",
-                "info": "Veřejné výdaje na vzdělávání vůči HDP",
-                "desc_suffix": " z HDP tvoří veřejné výdaje na vzdělání",
+                "info": "Výdaje na vzdělávání vůči HDP",
+                "desc_suffix": " z HDP tvoří výdaje na vzdělání; (od 2015 i soukromé)",
                 "sign": " % HDP"
             },
             "en": {
                 "name": "Education Expenditures",
-                "info": "Public education expenditures as a share of GDP",
-                "desc_suffix": " % of GDP are public education expenditures",
+                "info": "Education expenditures as a share of GDP",
+                "desc_suffix": " % of GDP are education expenditures (since 2015 also private)",
                 "sign": " % of GDP"
             }
         },
