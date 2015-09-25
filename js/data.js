@@ -255,8 +255,8 @@ var data = {
             "en": "Belgium"
         },
         "pinFix": {
-            "x": -10,
-            "y": 0
+            "x": -30,
+            "y": -10
         },
         "metrics": {
             "EIB": {
@@ -1727,8 +1727,8 @@ var data = {
             "en": "Luxembourg"
         },
         "pinFix": {
-            "x": 0,
-            "y": 0
+            "x": -100,
+            "y": -100
         },
         "metrics": {
             "EIB": {
