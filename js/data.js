@@ -1727,8 +1727,8 @@ var data = {
             "en": "Luxembourg"
         },
         "pinFix": {
-            "x": -55,
-            "y": -40
+            "x": -58,
+            "y": -35
         },
         "metrics": {
             "EIB": {
