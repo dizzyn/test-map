@@ -58,14 +58,14 @@ var data = {
         "Graduates": {
             "cs": {
                 "name": "Počet absolventů",
-                "info": "Počet absolventů technických oborů na 1 000 obyvatel",
-                "desc_suffix": " absolventů na 1 000 obyvatel",
+                "info": "Počet absolventů technických oborů na 1 000 obyvatel mezi 20 - 29 lety",
+                "desc_suffix": " absolventů na 1 000  mladých obyvatel",
                 "sign": " absolventů"
             },
             "en": {
                 "name": "Technical absolvents",
-                "info": "Number of technical fields absolvents per 1 000 inhabitants",
-                "desc_suffix": " absolvents per 1 000 inhabitants",
+                "info": "Number of technical fields absolvents per 1 000 inhabitants aged 20 - 29",
+                "desc_suffix": " absolvents per 1 000 young inhabitants",
                 "sign": " absolvents"
             }
         },
