@@ -101,8 +101,8 @@ var data = {
         "Broadband": {
             "cs": {
                 "name": "Připojení k internetu",
-                "info": "Podíl domácností připojených k vysokorychlostnímu internetu",
-                "desc_suffix": " % domácností připojených k vysokorychlostnímu internetu",
+                "info": "Podíl domácností připojených k širokopásmovému internetu",
+                "desc_suffix": " % domácností připojených k širokopásmovému internetu",
                 "sign": " % domácností"
             },
             "en": {
