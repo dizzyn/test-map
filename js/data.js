@@ -158,7 +158,7 @@ var data = {
     },
 "states": {
 "austria": {
-"names": {
+"0mes": {
 "cs": "Rakousko",
 "en": "Austria"
 },
@@ -250,7 +250,7 @@ var data = {
 }
 },
 "belgium": {
-"names": {
+"0mes": {
 "cs": "Belgie",
 "en": "Belgium"
 },
@@ -342,7 +342,7 @@ var data = {
 }
 },
 "bulgaria": {
-"names": {
+"0mes": {
 "cs": "Bulharsko",
 "en": "Bulgaria"
 },
@@ -434,7 +434,7 @@ var data = {
 }
 },
 "croatia": {
-"names": {
+"0mes": {
 "cs": "Chorvatsko",
 "en": "Croatia"
 },
@@ -484,12 +484,12 @@ var data = {
 "2015": [33,1.2211522]
 },
 "Venture_cap": {
-"2010": [NA,NA],
-"2011": [NA,NA],
-"2012": [NA,NA],
-"2013": [NA,NA],
-"2014": [NA,NA],
-"2015": [NA,NA]
+"2010": [0,0],
+"2011": [0,0],
+"2012": [0,0],
+"2013": [0,0],
+"2014": [0,0],
+"2015": [0,0]
 },
 "Broadband": {
 "2010": [23,39.0000000],
@@ -526,7 +526,7 @@ var data = {
 }
 },
 "cyprus": {
-"names": {
+"0mes": {
 "cs": "Kypr",
 "en": "Cyprus"
 },
@@ -576,12 +576,12 @@ var data = {
 "2015": [50,1.7470862]
 },
 "Venture_cap": {
-"2010": [NA,NA],
-"2011": [NA,NA],
-"2012": [NA,NA],
-"2013": [NA,NA],
-"2014": [NA,NA],
-"2015": [NA,NA]
+"2010": [0,0],
+"2011": [0,0],
+"2012": [0,0],
+"2013": [0,0],
+"2014": [0,0],
+"2015": [0,0]
 },
 "Broadband": {
 "2010": [37,47.0000000],
@@ -618,7 +618,7 @@ var data = {
 }
 },
 "czech-republic": {
-"names": {
+"0mes": {
 "cs": "Česká republika",
 "en": "Czech Republic"
 },
@@ -710,7 +710,7 @@ var data = {
 }
 },
 "denmark": {
-"names": {
+"0mes": {
 "cs": "Dánsko",
 "en": "Denmark"
 },
@@ -802,7 +802,7 @@ var data = {
 }
 },
 "estonia": {
-"names": {
+"0mes": {
 "cs": "Estonsko",
 "en": "Estonia"
 },
@@ -894,7 +894,7 @@ var data = {
 }
 },
 "finland": {
-"names": {
+"0mes": {
 "cs": "Finsko",
 "en": "Finland"
 },
@@ -986,7 +986,7 @@ var data = {
 }
 },
 "france": {
-"names": {
+"0mes": {
 "cs": "Francie",
 "en": "France"
 },
@@ -1078,7 +1078,7 @@ var data = {
 }
 },
 "germany": {
-"names": {
+"0mes": {
 "cs": "Německo",
 "en": "Germany"
 },
@@ -1170,7 +1170,7 @@ var data = {
 }
 },
 "greece": {
-"names": {
+"0mes": {
 "cs": "Řecko",
 "en": "Greece"
 },
@@ -1236,12 +1236,12 @@ var data = {
 "2015": [21,65.0000000]
 },
 "Educ_exp": {
-"2010": [NA,NA],
-"2011": [NA,NA],
-"2012": [NA,NA],
-"2013": [NA,NA],
-"2014": [NA,NA],
-"2015": [NA,NA]
+"2010": [0,0],
+"2011": [0,0],
+"2012": [0,0],
+"2013": [0,0],
+"2014": [0,0],
+"2015": [0,0]
 },
 "Exports": {
 "2010": [29,5.5000000],
@@ -1262,7 +1262,7 @@ var data = {
 }
 },
 "hungary": {
-"names": {
+"0mes": {
 "cs": "Maďarsko",
 "en": "Hungary"
 },
@@ -1354,7 +1354,7 @@ var data = {
 }
 },
 "ireland": {
-"names": {
+"0mes": {
 "cs": "Irsko",
 "en": "Ireland"
 },
@@ -1446,7 +1446,7 @@ var data = {
 }
 },
 "italy": {
-"names": {
+"0mes": {
 "cs": "Itálie",
 "en": "Italy"
 },
@@ -1538,7 +1538,7 @@ var data = {
 }
 },
 "latvia": {
-"names": {
+"0mes": {
 "cs": "Lotyšsko",
 "en": "Latvia"
 },
@@ -1630,7 +1630,7 @@ var data = {
 }
 },
 "lithuania": {
-"names": {
+"0mes": {
 "cs": "Litva",
 "en": "Lithuania"
 },
@@ -1722,7 +1722,7 @@ var data = {
 }
 },
 "luxembourg": {
-"names": {
+"0mes": {
 "cs": "Lucembursko",
 "en": "Luxembourg"
 },
@@ -1814,7 +1814,7 @@ var data = {
 }
 },
 "malta": {
-"names": {
+"0mes": {
 "cs": "Malta",
 "en": "Malta"
 },
@@ -1864,12 +1864,12 @@ var data = {
 "2015": [28,1.0461136]
 },
 "Venture_cap": {
-"2010": [NA,NA],
-"2011": [NA,NA],
-"2012": [NA,NA],
-"2013": [NA,NA],
-"2014": [NA,NA],
-"2015": [NA,NA]
+"2010": [0,0],
+"2011": [0,0],
+"2012": [0,0],
+"2013": [0,0],
+"2014": [0,0],
+"2015": [0,0]
 },
 "Broadband": {
 "2010": [65,63.0000000],
@@ -1906,7 +1906,7 @@ var data = {
 }
 },
 "netherlands": {
-"names": {
+"0mes": {
 "cs": "Nizozemsko",
 "en": "Netherlands"
 },
@@ -1998,7 +1998,7 @@ var data = {
 }
 },
 "poland": {
-"names": {
+"0mes": {
 "cs": "Polsko",
 "en": "Poland"
 },
@@ -2090,7 +2090,7 @@ var data = {
 }
 },
 "portugal": {
-"names": {
+"0mes": {
 "cs": "Portugalsko",
 "en": "Portugal"
 },
@@ -2182,7 +2182,7 @@ var data = {
 }
 },
 "romania": {
-"names": {
+"0mes": {
 "cs": "Rumunsko",
 "en": "Romania"
 },
@@ -2274,7 +2274,7 @@ var data = {
 }
 },
 "slovak-republic": {
-"names": {
+"0mes": {
 "cs": "Slovensko",
 "en": "Slovak Republic"
 },
@@ -2366,7 +2366,7 @@ var data = {
 }
 },
 "slovenia": {
-"names": {
+"0mes": {
 "cs": "Slovinsko",
 "en": "Slovenia"
 },
@@ -2458,7 +2458,7 @@ var data = {
 }
 },
 "spain": {
-"names": {
+"0mes": {
 "cs": "Španělsko",
 "en": "Spain"
 },
@@ -2550,7 +2550,7 @@ var data = {
 }
 },
 "sweden": {
-"names": {
+"0mes": {
 "cs": "Švédsko",
 "en": "Sweden"
 },
@@ -2642,7 +2642,7 @@ var data = {
 }
 },
 "united-kingdom": {
-"names": {
+"0mes": {
 "cs": "Spojené království",
 "en": "United Kingdom"
 },
@@ -2734,6 +2734,7 @@ var data = {
 }
 }
 }
+
 
 
 };
