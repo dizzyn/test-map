@@ -3,14 +3,18 @@ var data = {
     "mainState": "czech-republic",
     "mainLanguage": "cs",
     "strings": {
-        "cs": {        
-            "compare": "Porovnat",
-            "download-instr": "Upozornění: Pro správnou funkčnost souboru je třeba mít povolená makra v Excelu."
-        },
-        "en": {        
-            "compare": "Compare",
-            "download-instr": "Info: switch Excel macros on."
-        }
+      "cs": {
+          "compare": "Porovnat",
+          "download-instr": "Upozornění: Pro správnou funkčnost souboru je třeba mít povolená makra v Excelu.",
+          "no-data": "Nejsou data",
+          "in-EU": "V EU"
+      },
+      "en": {
+          "compare": "Compare",
+          "download-instr": "Info: switch Excel macros on.",
+          "no-data": "No data",
+          "in-EU": "In EU"
+      }
     },
     "metrics": {
         "EIB": {
@@ -82,7 +86,7 @@ var data = {
                 "desc_suffix": " publications per 1 000 inhabitants",
                 "sign": " publications"
             }
-            
+
         },
         "Venture_cap": {
             "cs": {
