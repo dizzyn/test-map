@@ -62,10 +62,10 @@ $(function () {
     // Refresh popup dialog according it's slectors
     //
     var refreshPopup = function (state, metrics) {
-        //
+
         for (var i = 1; i < 3; i++) {
             var $state = $popupHolder.find(".state" + i);
-//
+
             var state = $popupHolder.find(".state-selector-" + i).data("val");
             var year = $popupYearSelector.data("val");
             var metricKey = $popupMetricSelector.data("val");
@@ -79,36 +79,32 @@ $(function () {
             $(".bottom-table .row").each(function () {
                 var $row = $(this);
                 var metricKey = $row.attr("data-metric");
-//                console.log(metric);
-//                console.log(data.states[state].metrics);
-//                console.log(metricKey);
-//                console.log(data.states[state].metrics[metricKey]);
-                $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
-                $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey][selectedLanguage]["sign"]);
-                $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
-                var str = getScore(state, metricKey, year) + " / " + states.length
-                        + " v eu";
 
-                if (metricKey !== "EIB") {
-                    str = data.states[state].metrics[metricKey][year][1] + " " + metric.sign
-                            + ", " + str;
+                //hide metrics if they are empty
+                if (data.states[state].metrics[metricKey][year][0] == -1 || data.states[state].metrics[metricKey][year][0] == -1) {
+                  $row.find(".subrow-" + i + " .nodata").show();
+                  $row.find(".subrow-" + i + " .desc").hide();
+                  $row.find(".subrow-" + i + " .bar").hide();
+                } else {
+                  $row.find(".subrow-" + i + " .nodata").hide();
+                  $row.find(".subrow-" + i + " .desc").show();
+                  $row.find(".subrow-" + i + " .bar").show();
+
+                  $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
+                  $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
+
+                  $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey][selectedLanguage]["sign"]);
+                  var str = getScore(state, metricKey, year) + " / " + states.length + " " + data["strings"][selectedLanguage]["in-EU"];
+
+                  if (metricKey !== "EIB") {
+                      str = data.states[state].metrics[metricKey][year][1] + " " + metric.sign + ", " + str;
+                  }
+
+                  $row.find(".subrow-" + i + " .desc").html(str);
                 }
-
-                $row.find(".subrow-" + i + " .desc").html(str);
             });
 
-//            console.log($state.find(".flag img").length)
-
             $state.find(".flag img").attr("src", "img/flags/" + state + ".png");
-
-//            $state.find(".name").html(data.states[state]["names"]["cs"]);
-//
-//            $state.find(".score .value").html(getScore(state, metricKey, year) + " / " + states.length);
-//
-//            $state.find(".points .value").html(data.states[state].metrics[metricKey][year][0]);
-//
-//            $state.find(".detail .number").html(data.states[state].metrics[metricKey][year][1] + " " + metric.sign);
-//            $state.find(".detail .desc").html(metric.desc_suffix);
         }
     };
 
@@ -278,12 +274,12 @@ $(function () {
     var metricsKeys = Object.keys(data.metrics);
     for (i in metricsKeys) {
         var key = metricsKeys[i];
-        //  $popupMetricSelector.append($("<option>").html(data.metrics[key]["name"]).attr("value", key));
 
         var $newRow = $rowTemplate.clone().appendTo($table).removeClass("row-template").addClass("row").addClass("row-metric-" + key).attr("data-metric", key);
-//        $newRow.addClass("state-" + state);
+
         $newRow.find(".title .short").html(data.metrics[key][selectedLanguage]["name"]);
         $newRow.find(".title .long").html(data.metrics[key][selectedLanguage]["info"]);
+        $newRow.find(".nodata").html(data["strings"][selectedLanguage]["no-data"]);
         $newRow.click(function () {
             $popupMetricSelector.data("val", $(this).attr("data-metric"));
             refreshPopup();
@@ -308,7 +304,7 @@ $(function () {
 //                 state == "czech-republic"
 //                || state == "estonia"
 //                || state == "italy"
-//                ) && 
+//                ) &&
                     $state.length > 0) {
 
                 var coordinates = $state[0].getBBox();
@@ -421,7 +417,7 @@ $(function () {
             var correction = (100 / yearsCount / 2);
 
             if ((yearPlayScale - correction) % (Math.floor(100 / yearsCount)) === 0) {
-                //$(".years .year.selected").removeClass("selected");                
+                //$(".years .year.selected").removeClass("selected");
                 //$($yearsDivs[(yearPlayScale + correction) / (100 / yearsCount) - 1]).addClass("selected");
                 selectYear($($yearsDivs[(yearPlayScale + correction) / (100 / yearsCount) - 1]).attr("data-year"))
                 selectMetric();
