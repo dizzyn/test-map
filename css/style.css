@@ -270,7 +270,7 @@ body {
   top: 0;
   right: 0;
   max-width: 40%;
-  background-color: rgba(16, 99, 158, 0.7);
+  background-color: rgba(16, 99, 157, 0.7);
   color: white;
   z-index: 3;
   padding: 5px 5px;
@@ -483,7 +483,7 @@ body {
   cursor: pointer;
 }
 .popup-holder .popup .btn-close:hover {
-  background-color: rgba(0, 84, 148, 0.8);
+  background-color: rgba(0, 84, 147, 0.8);
 }
 .popup-holder .popup .top-box {
   *zoom: 1;
@@ -649,7 +649,7 @@ body {
 }
 .popup-holder .popup .bottom-table .row {
   cursor: pointer;
-  padding: 6px 5px;
+  padding: 1px 5px;
   color: #005493;
   *zoom: 1;
 }
@@ -946,5 +946,5 @@ body {
   width: 20%;
 }
 .bottom-bar .years.count6 .year {
-  width: 16.666666666666668%;
+  width: 16.66666667%;
 }
