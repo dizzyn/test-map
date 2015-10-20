@@ -18,163 +18,153 @@ var data = {
     },
     "metrics": {
         "EIB": {
+            "delay_statistics": "0",
             "cs": {
                 "name": "Inovační Barometr",
                 "info": "Inovační Barometr",
                 "desc_suffix": " bodů v Erste IB",
-                "delay_statistics": "0",
                 "sign": " bodů"
             },
             "en": {
                 "name": "Innovation Barometer",
                 "info": "Innovation Barometer",
                 "desc_suffix": " pts in IB",
-                "delay_statistics": "0",
                 "sign": " pts"
             }
         },
         "RnD": {
+            "delay_statistics": "2",
             "cs": {
                 "name": "Výdaje na R&D",
                 "info": "Podíl celkových výdajů na výzkum a vývoj na HDP",
                 "desc_suffix": " % z HDP tvoří výdaje na R&D",
-                "delay_statistics": "2",
                 "sign": " % HDP"
             },
             "en": {
                 "name": "R&D Expenditures",
                 "info": "Total R&D expenditers as a share of GDP",
                 "desc_suffix": " % of GDP are R&D expenditures",
-                "delay_statistics": "2",
                 "sign": " % of GDP"
             }
         },
         "Patents": {
+            "delay_statistics": "2",
             "cs": {
                 "name": "Počet patentů",
                 "info": "Počet přihlášených patentů na 1 000 obyvatel",
                 "desc_suffix": " patentů na 1 000 obyvatel",
-                "delay_statistics": "2",
                 "sign": " patentů"
             },
             "en": {
                 "name": "Patents",
                 "info": "Number of registered patents per 1 000 inhabitants",
                 "desc_suffix": " patents per 1 000 inhabitans",
-                "delay_statistics": "2",
                 "sign": " patents"
             }
         },
         "Graduates": {
+            "delay_statistics": "2",
             "cs": {
                 "name": "Počet absolventů",
                 "info": "Počet absolventů technických oborů na 1 000 obyvatel mezi 20 - 29 lety",
                 "desc_suffix": " absolventů na 1 000  mladých obyvatel",
-                "delay_statistics": "2",
                 "sign": " absolventů"
             },
             "en": {
                 "name": "Technical absolvents",
                 "info": "Number of technical fields absolvents per 1 000 inhabitants aged 20 - 29",
                 "desc_suffix": " absolvents per 1 000 young inhabitants",
-                "delay_statistics": "2",
                 "sign": " absolvents"
             }
         },
         "Publications": {
+            "delay_statistics": "1",
             "cs": {
                 "name": "Počet publikací",
                 "info": "Počet citovatelných publikací na 1 000 obyvatel",
                 "desc_suffix": " publikací na 1 000 obyvatel",
-                "delay_statistics": "1",
                 "sign": " publikací"
             },
             "en": {
                 "name": "Publications",
                 "info": "Citable publications per 1 000 inhabitants",
                 "desc_suffix": " publications per 1 000 inhabitants",
-                "delay_statistics": "1",
                 "sign": " publications"
             }
 
         },
         "Venture_cap": {
+            "delay_statistics": "1",
             "cs": {
                 "name": "Venture kapitál",
                 "info": "Investice do start-up a seed venture kapitálu",
                 "desc_suffix": " % z HDP tvoří investice do venture kapitálu",
-                "delay_statistics": "1",
                 "sign": " % HDP"
             },
             "en": {
                 "name": "Venture Capital",
                 "info": "Start-up and seed venture capital investments as a share of GDP",
                 "desc_suffix": " % of GDP are venture capital investment",
-                "delay_statistics": "1",
                 "sign": " % of GDP"
             }
         },
         "Broadband": {
+            "delay_statistics": "1",
             "cs": {
                 "name": "Připojení k internetu",
                 "info": "Podíl domácností připojených k širokopásmovému internetu",
                 "desc_suffix": " % domácností připojených k širokopásmovému internetu",
-                "delay_statistics": "1",
                 "sign": " % domácností"
             },
             "en": {
                 "name": "Broadband Internet",
                 "info": "Share of households with broadband internet",
                 "desc_suffix": " % of households connected to broadband internet",
-                "delay_statistics": "1",
                 "sign": " % of households"
             }
         },
         "Educ_exp": {
+            "delay_statistics": "3",
             "cs": {
                 "name": "Výdaje na vzdělávání",
                 "info": "Výdaje na vzdělávání vůči HDP",
                 "desc_suffix": " z HDP tvoří výdaje na vzdělání; (od 2015 i soukromé)",
-                "delay_statistics": "3",
                 "sign": " % HDP"
             },
             "en": {
                 "name": "Education Expenditures",
                 "info": "Education expenditures as a share of GDP",
                 "desc_suffix": " % of GDP are education expenditures (since 2015 also private)",
-                "delay_statistics": "3",
                 "sign": " % of GDP"
             }
         },
         "Exports": {
+            "delay_statistics": "1",
             "cs": {
                 "name": "High-tech export",
                 "info": "Podíl high-tech exportů na celkovém exportu",
                 "desc_suffix": " z celkového exportu tvoří high-tech produkty",
-                "delay_statistics": "1",
                 "sign": " % z Exportu"
             },
             "en": {
                 "name": "High-Tech Exports",
                 "info": "Share of High-Tech exports on total exports",
                 "desc_suffix": " % of total exports are high-tech exports",
-                "delay_statistics": "1",
                 "sign": " % of Exports"
             }
         },
         "E_Government": {
+            "delay_statistics": "1",
             "cs": {
                 "name": "eGovernment",
                 "info": "Podíl domácností komunikujících se státní správou elektronicky",
                 "desc_suffix": " domácností komunikuje se státní správou elektronicky",
-                "delay_statistics": "1",
                 "sign": " % domácností"
             },
             "en": {
                 "name": "eGovernment",
                 "info": "Share of households communating with administration electronically",
                 "desc_suffix": " of households communicate electronically",
-                "delay_statistics": "1",
                 "sign": " % of households"
             }
         }

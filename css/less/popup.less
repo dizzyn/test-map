@@ -180,7 +180,7 @@
             padding: 0 15px;
             .row {
                 cursor: pointer;
-                padding: 1px 5px;
+                padding: 4px 5px;
                 color: @darkBlue;
                 .clearfix();
 
@@ -209,7 +209,7 @@
                     .clearfix();
                     .subrow-1, .subrow-2 {
                         .desc {
-                            display: none;
+                            display: none !important;
                         }
                         .bar {
                             height: 14px;
@@ -251,7 +251,7 @@
                 &.selected {
                     .subrow-1, .subrow-2 {
                         .desc {
-                            display: block;
+                            display: block !important; //can't be replaced by javascript
                         }
                         .bar {
                             .points {

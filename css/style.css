@@ -649,7 +649,7 @@ body {
 }
 .popup-holder .popup .bottom-table .row {
   cursor: pointer;
-  padding: 1px 5px;
+  padding: 4px 5px;
   color: #005493;
   *zoom: 1;
 }
@@ -691,7 +691,7 @@ body {
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .desc,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .desc {
-  display: none;
+  display: none !important;
 }
 .popup-holder .popup .bottom-table .row .metrics .subrow-1 .bar,
 .popup-holder .popup .bottom-table .row .metrics .subrow-2 .bar {
@@ -738,7 +738,7 @@ body {
 }
 .popup-holder .popup .bottom-table .row.selected .subrow-1 .desc,
 .popup-holder .popup .bottom-table .row.selected .subrow-2 .desc {
-  display: block;
+  display: block !important;
 }
 .popup-holder .popup .bottom-table .row.selected .subrow-1 .bar .points,
 .popup-holder .popup .bottom-table .row.selected .subrow-2 .bar .points {
