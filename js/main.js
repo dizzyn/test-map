@@ -90,6 +90,8 @@ $(function () {
                   $row.find(".subrow-" + i + " .desc").show();
                   $row.find(".subrow-" + i + " .bar").show();
 
+                  $row.find(".title .date").html(" (" + (year - data.metrics[metricKey]["delay_statistics"]) + ")");
+
                   $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
                   $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
 
@@ -202,29 +204,19 @@ $(function () {
     //
     // Fill popup states,  metrics, years
     //
-
     var $popupStateSelector1 = $popupHolder.find(".state-selector-1").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function () {
         $(this).parent().toggleClass("open")
     }));
-//            .change(function() { //todo !!!
-//        refreshPopup()
-//    });
+
     var $popupStateSelector2 = $popupHolder.find(".state-selector-2").data("val", data.mainState).prepend($("<div>").html(data.states[data.mainState]["names"][selectedLanguage]).addClass("handler").css("background-image", "url(img/flags/" + data.mainState + ".png)").click(function () {
         $(this).parent().toggleClass("open")
     }));
-    //.change(function() {
-//        refreshPopup()
-//    });
+
     var $popupYearSelector = $popupHolder.find(".year-selector").data("val", data.years[0]).append($("<div>").html(data.years[0]).addClass("handler").click(function () {
         $(this).parent().toggleClass("open")
     }));
-//    .change(function() {
-//        refreshPopup()
-//    });
+
     var $popupMetricSelector = $popupHolder.find(".metric-selector").data("val", Object.keys(data.metrics)[0]);
-//            .change(function() {
-//        refreshPopup()
-//    });
 
     for (i in states) {
         var state = states[i];
@@ -277,8 +269,8 @@ $(function () {
 
         var $newRow = $rowTemplate.clone().appendTo($table).removeClass("row-template").addClass("row").addClass("row-metric-" + key).attr("data-metric", key);
 
-        $newRow.find(".title .short").html(data.metrics[key][selectedLanguage]["name"]);
-        $newRow.find(".title .long").html(data.metrics[key][selectedLanguage]["info"]);
+        $newRow.find(".title .short").html(data.metrics[key][selectedLanguage]["name"] + " <span class=\"date\">.</span>");
+        $newRow.find(".title .long").html(data.metrics[key][selectedLanguage]["info"] + " <span class=\"date\">.</span>");
         $newRow.find(".nodata").html(data["strings"][selectedLanguage]["no-data"]);
         $newRow.click(function () {
             $popupMetricSelector.data("val", $(this).attr("data-metric"));
