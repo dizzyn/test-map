@@ -92,7 +92,7 @@ $(function () {
 
                   $row.find(".title .date").html(" (" + (year - data.metrics[metricKey]["delay_statistics"]) + ")");
 
-                  $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + "b");
+                  $row.find(".subrow-" + i + " .points").html(data.states[state].metrics[metricKey][year][0] + data["strings"][selectedLanguage]["points-sign"]);
                   $row.find(".subrow-" + i + " .bar").css("width", data.states[state].metrics[metricKey][year][0] + "%");
 
                   $row.find(".subrow-" + i + " .value").html(data.states[state].metrics[metricKey][year][1] + data.metrics[metricKey][selectedLanguage]["sign"]);
@@ -308,7 +308,7 @@ $(function () {
                         + "  <div class=\"content\">"
                         + "    <div class=\"left\">"
                         + "      <span class=\"value\">100</span>"
-                        + "      <span class=\"points\">b</span>"
+                        + "      <span class=\"points\">" + data["strings"][selectedLanguage]["points-sign"] + "</span>"
                         + "    </div>"
                         + "    <span class=\"score\"></span>"
                         + "    <span class=\"percentage\"></span>"

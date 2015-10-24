@@ -7,13 +7,15 @@ var data = {
           "compare": "Porovnat",
           "download-instr": "Upozornění: Pro správnou funkčnost souboru je třeba mít povolená makra v Excelu.",
           "no-data": "Nejsou data",
-          "in-EU": "V EU"
+          "in-EU": "V EU",
+          "points-sign": "b"
       },
       "en": {
           "compare": "Compare",
           "download-instr": "Info: switch Excel macros on.",
           "no-data": "No data",
-          "in-EU": "In EU"
+          "in-EU": "In EU",
+          "points-sign": "p"
       }
     },
     "metrics": {
