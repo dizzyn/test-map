@@ -406,12 +406,18 @@ $(function () {
             yearPlayScale++;
             $scaleInner.css("width", ($scale.width() / 100) * yearPlayScale);
 
-            var correction = (100 / yearsCount / 2);
+            var correction = Math.round(100 / yearsCount / 2);
+
+            // console.log("zde",
+            //  (yearPlayScale - correction),
+            //  (Math.floor(100 / yearsCount)),
+            //  ((yearPlayScale - correction) % (Math.floor(100 / yearsCount)) === 0));
 
             if ((yearPlayScale - correction) % (Math.floor(100 / yearsCount)) === 0) {
                 //$(".years .year.selected").removeClass("selected");
                 //$($yearsDivs[(yearPlayScale + correction) / (100 / yearsCount) - 1]).addClass("selected");
-                selectYear($($yearsDivs[(yearPlayScale + correction) / (100 / yearsCount) - 1]).attr("data-year"))
+                 
+                selectYear($($yearsDivs[Math.round((yearPlayScale + correction) / (100 / yearsCount) - 1)]).attr("data-year"))
                 selectMetric();
             }
 
