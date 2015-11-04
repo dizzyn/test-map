@@ -748,6 +748,10 @@ body {
 .popup-holder .popup .bottom-table .row.selected .subrow-2 .bar .value {
   display: none;
 }
+.popup-holder .popup .bottom-table .row.selected .subrow-1 .nodata,
+.popup-holder .popup .bottom-table .row.selected .subrow-2 .nodata {
+  display: none!important;
+}
 .popup-holder .popup .bottom-table .row.selected .title {
   line-height: 1.4;
   font-weight: bold;
