@@ -279,7 +279,7 @@ body {
   background-image: url(../img/ico-info.png);
   background-repeat: no-repeat;
   background-position: center center;
-  background-position-x: 5px;
+  background-position: 5px center;
   padding-left: 30px;
 }
 .svg-container .svg-content {
